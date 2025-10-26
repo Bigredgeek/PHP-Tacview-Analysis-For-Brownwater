@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Updated `public/api/debriefing.php`
 - Changed alt text from "AGWG Logo" to "Merc Logo"
 
+### Fixed - 2025-10-25
+- Copied `merc_logo.png` to `public/` directory to fix logo not displaying on Vercel deployment
+- Vercel uses `public/` as the output directory for static assets
+
 ### Added - 2025-10-26
 #### Automated icon curation
 - PowerShell curator `tools/auto_curate_icons.ps1` now fetches canonical infobox images directly from Wikipedia articles using the pageimages API.
