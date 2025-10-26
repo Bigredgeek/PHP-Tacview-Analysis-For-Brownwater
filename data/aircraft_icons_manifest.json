@@ -271,6 +271,180 @@
       "targetFilename": "P-47D_Thunderbolt.jpg",
       "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/P47_Thunderbolt_-_Chino_2014_%28cropped%29.jpg",
       "descriptionPage": "https://en.wikipedia.org/wiki/Republic+P-47+Thunderbolt"
+    },
+    {
+      "name": "C-130 Hercules",
+      "targetFilename": "C-130_Hercules.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lockheed_C-130_Hercules.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Lockheed+C-130+Hercules"
+    },
+    {
+      "name": "F-14A Tomcat",
+      "targetFilename": "F-14A_Tomcat.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/US_Navy_051105-F-5480T-005_An_F-14D_Tomcat_conducts_a_mission_over_the_Persian_Gulf-region.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Grumman+F-14+Tomcat"
+    },
+    {
+      "name": "Su-24M Fencer-D",
+      "targetFilename": "Su-24M_Fencer-D.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Sukhoi_Su-24_inflight_Mishin-2.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-24"
+    },
+    {
+      "name": "A-6E Intruder",
+      "targetFilename": "A-6E_Intruder.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Grumman_KA-6D_Intruder_of_VA-34_in_flight%2C_in_1988.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Grumman+A-6+Intruder"
+    },
+    {
+      "name": "A-7E Corsair II",
+      "targetFilename": "A-7E_Corsair_II.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/A-7E_Corsair_II_of_VA-146_in_flight_on_16_November_1974_%28NNAM.1996.253.7100.039%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/LTV+A-7+Corsair+II"
+    },
+    {
+      "name": "A6M5 Zero",
+      "targetFilename": "A6M5_Zero.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/A6M3_Zero_N712Z_1.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mitsubishi+A6M+Zero"
+    },
+    {
+      "name": "B-1B Lancer",
+      "targetFilename": "B-1B_Lancer.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/B-1B_air_refueling.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Rockwell+B-1+Lancer"
+    },
+    {
+      "name": "B-52H Stratofortress",
+      "targetFilename": "B-52H_Stratofortress.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/B-52_Stratofortress_assigned_to_the_307th_Bomb_Wing_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+B-52+Stratofortress"
+    },
+    {
+      "name": "Bf 109 K-4",
+      "targetFilename": "Bf_109_K-4.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Bundesarchiv_Bild_101I-662-6659-37%2C_Flugzeug_Messerschmitt_Me_109.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Messerschmitt+Bf+109"
+    },
+    {
+      "name": "F-117A Nighthawk",
+      "targetFilename": "F-117A_Nighthawk.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/F-117_Nighthawk_Front.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Lockheed+F-117+Nighthawk"
+    },
+    {
+      "name": "F-5E Tiger II",
+      "targetFilename": "F-5E_Tiger_II.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/J-3005.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Northrop+F-5"
+    },
+    {
+      "name": "F-86F Sabre",
+      "targetFilename": "F-86F_Sabre.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/F-86_Sabre_hertiage_flight.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/North+American+F-86+Sabre"
+    },
+    {
+      "name": "F4F Wildcat",
+      "targetFilename": "F4F_Wildcat.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/F4F-3_new_pitot_tube_of_later_model.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Grumman+F4F+Wildcat"
+    },
+    {
+      "name": "F6F Hellcat",
+      "targetFilename": "F6F_Hellcat.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Hellcats_F6F-3%2C_May_1943.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Grumman+F6F+Hellcat"
+    },
+    {
+      "name": "Fw 190 A-8",
+      "targetFilename": "Fw_190_A-8.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Fw_190A-3_JG_2_in_Britain_1942.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Focke-Wulf+Fw+190"
+    },
+    {
+      "name": "IL-76MD",
+      "targetFilename": "IL-76MD.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Il-76MD-90A_RF-78653.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Ilyushin+Il-76"
+    },
+    {
+      "name": "IL-78M",
+      "targetFilename": "IL-78M.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ilyushin_Il-78M_inflight.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Ilyushin+Il-78"
+    },
+    {
+      "name": "J-11A",
+      "targetFilename": "J-11A.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/J-11BChel.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Shenyang+J-11"
+    },
+    {
+      "name": "L-39C Albatros",
+      "targetFilename": "L-39C_Albatros.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/L-39ZA_Albatros_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Aero+L-39+Albatros"
+    },
+    {
+      "name": "MB-339A",
+      "targetFilename": "MB-339A.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/MB339_-_RIAT_2008_%282674540983%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Aermacchi+MB-339"
+    },
+    {
+      "name": "MiG-15bis",
+      "targetFilename": "MiG-15bis.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/MiG-15_%2852544074366%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mikoyan-Gurevich+MiG-15"
+    },
+    {
+      "name": "MiG-31 Foxhound",
+      "targetFilename": "MiG-31_Foxhound.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Russian_Air_Force_Mikoyan-Gurevich_MiG-31P.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mikoyan+MiG-31"
+    },
+    {
+      "name": "P-40F Warhawk",
+      "targetFilename": "P-40F_Warhawk.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Curtiss_P-40M_Warhawk_%272104590_-_44%27_%28G-KITT%29_%2826830598751%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Curtiss+P-40+Warhawk"
+    },
+    {
+      "name": "Rafale M",
+      "targetFilename": "Rafale_M.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Rafale_-_RIAT_2009_%283751416421%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Dassault+Rafale"
+    },
+    {
+      "name": "Spitfire LF Mk. IX",
+      "targetFilename": "Spitfire_LF_Mk._IX.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Spitfire_-_Season_Premiere_Airshow_2018_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Supermarine+Spitfire"
+    },
+    {
+      "name": "Su-22M4",
+      "targetFilename": "Su-22M4.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Vietnamese_Su-22M4_with_Kh-25s.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-17"
+    },
+    {
+      "name": "Tu-160 Blackjack",
+      "targetFilename": "Tu-160_Blackjack.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Tupolev_Tu-160_RF-94109.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Tupolev+Tu-160"
+    },
+    {
+      "name": "Tu-22M3 Backfire-C",
+      "targetFilename": "Tu-22M3_Backfire-C.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tupolev_Tu-22M3M_GEFEST_%2819230388334%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Tupolev+Tu-22M"
+    },
+    {
+      "name": "Tu-95MS Bear-H",
+      "targetFilename": "Tu-95MS_Bear-H.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Tupolev_Tu-95_over_Moscow_Kustov_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Tupolev+Tu-95"
     }
   ]
 }
