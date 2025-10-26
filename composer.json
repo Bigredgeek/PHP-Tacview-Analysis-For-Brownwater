@@ -1,0 +1,14 @@
+{
+  "name": "bigredgeek/php-tacview-brownwater",
+  "description": "PHP-based Tacview analysis tool for DCS debriefing files",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    }
+  }
+}
