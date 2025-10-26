@@ -201,6 +201,126 @@ $wikiTitleMap = @{
   # WWII Japanese aircraft
   'A6M5 Zero' = 'Mitsubishi A6M Zero'
   'Ki-61-I Hien' = 'Kawasaki Ki-61'
+  
+  # Helicopters - Russian/Soviet
+  'Mi-24P Hind-F' = 'Mil Mi-24'
+  'Mi-24V Hind-E' = 'Mil Mi-24'
+  'Mi-28N Havoc' = 'Mil Mi-28'
+  'Mi-28N Havoc-B' = 'Mil Mi-28'
+  'Mi-8MT Hip' = 'Mil Mi-8'
+  'MI-8MT' = 'Mil Mi-8'
+  'Mi-26 Halo' = 'Mil Mi-26'
+  'MI-26' = 'Mil Mi-26'
+  'Ka-27 Helix' = 'Kamov Ka-27'
+  'KA27' = 'Kamov Ka-27'
+  'Ka-50 Black Shark' = 'Kamov Ka-50'
+  'Ka-50 Hokum-A' = 'Kamov Ka-50'
+  'KA50' = 'Kamov Ka-50'
+  'Ka-52 Alligator' = 'Kamov Ka-52'
+  'KA52' = 'Kamov Ka-52'
+  
+  # Helicopters - American
+  'AH-1W SuperCobra' = 'Bell AH-1 SuperCobra'
+  'AH-1W' = 'Bell AH-1 SuperCobra'
+  'AH-64A Apache' = 'Boeing AH-64 Apache'
+  'AH64A' = 'Boeing AH-64 Apache'
+  'AH-64D Apache Longbow' = 'Boeing AH-64 Apache'
+  'CH-47F Chinook' = 'Boeing CH-47 Chinook'
+  'CH-53E Super Stallion' = 'Sikorsky CH-53E Super Stallion'
+  'CH53' = 'Sikorsky CH-53 Sea Stallion'
+  'UH-1H Huey' = 'Bell UH-1 Iroquois'
+  'UH-60A Black Hawk' = 'Sikorsky UH-60 Black Hawk'
+  
+  # Helicopters - Other
+  'AB212' = 'Bell 212'
+  
+  # Additional shorthand variants (not already mapped)
+  'C17' = 'Boeing C-17 Globemaster III'
+  'C130' = 'Lockheed C-130 Hercules'
+  'C13' = 'Lockheed C-130 Hercules'
+  'KC10A' = 'McDonnell Douglas KC-10 Extender'
+  'MIG29' = 'Mikoyan MiG-29'
+  'MIG23' = 'Mikoyan-Gurevich MiG-23'
+  'MIG25' = 'Mikoyan-Gurevich MiG-25'
+  'MIG27' = 'Mikoyan-Gurevich MiG-27'
+  'Su-39 Frogfoot-C' = 'Sukhoi Su-25'
+  'F117' = 'Lockheed F-117 Nighthawk'
+  'F14A' = 'Grumman F-14 Tomcat'
+  'F15' = 'McDonnell Douglas F-15 Eagle'
+  'F16' = 'General Dynamics F-16 Fighting Falcon'
+  'F16A' = 'General Dynamics F-16 Fighting Falcon'
+  'F18-C' = 'McDonnell Douglas F/A-18 Hornet'
+  'F4E' = 'McDonnell Douglas F-4 Phantom II'
+  'F5-E' = 'Northrop F-5'
+  'B1B' = 'Rockwell B-1 Lancer'
+  'B52' = 'Boeing B-52 Stratofortress'
+  'IL76MD' = 'Ilyushin Il-76'
+  'IL78M' = 'Ilyushin Il-78'
+  'AN26' = 'Antonov An-26'
+  'AN30' = 'Antonov An-30'
+  'A50' = 'Beriev A-50'
+  
+  # Ground Vehicles - Tanks
+  'M1 Abrams' = 'M1 Abrams'
+  'M1' = 'M1 Abrams'
+  'M48 Patton' = 'M48 Patton'
+  'M48' = 'M48 Patton'
+  'M60 Patton' = 'M60 Patton'
+  'M60' = 'M60 Patton'
+  'M26' = 'M26 Pershing'
+  'Leopard 2' = 'Leopard 2'
+  'LEOPARD2' = 'Leopard 2'
+  'leopard-2A4' = 'Leopard 2'
+  
+  # Ground Vehicles - IFVs/APCs
+  'M2 Bradley' = 'M2 Bradley'
+  'M2' = 'M2 Bradley'
+  'M113' = 'M113 armored personnel carrier'
+  'BMP-1' = 'BMP-1'
+  'BMP-2' = 'BMP-2'
+  'BMP3' = 'BMP-3'
+  'BMD1' = 'BMD-1'
+  'BTR-D' = 'BTR-D'
+  'BTR70' = 'BTR-70'
+  'LAV25' = 'LAV-25'
+  'LAV-25' = 'LAV-25'
+  'Marder' = 'Marder (IFV)'
+  'MCV80' = 'Warrior (IFV)'
+  'LVTP7' = 'AAV7'
+  
+  # Ground Vehicles - Artillery
+  'M109 Paladin' = 'M109 howitzer'
+  'M109' = 'M109 howitzer'
+  'BM21-40' = '9K51 Grad'
+  
+  # Ground Vehicles - Anti-Air
+  'Gepard' = 'Flakpanzer Gepard'
+  'GUEPARD' = 'Flakpanzer Gepard'
+  'Ural-375 ZU-23' = 'ZU-23-2'
+  'Ural-375' = 'Ural-375'
+  
+  # Ground Vehicles - Trucks/Transport
+  'GAZ-66' = 'GAZ-66'
+  'GAZ66' = 'GAZ-66'
+  'GAZ66-Searchlight' = 'GAZ-66'
+  'GAZ3307' = 'GAZ-3307'
+  'GAZ3308' = 'GAZ-3308'
+  'Humvee' = 'Humvee'
+  'HUMMER' = 'Humvee'
+  'KAMAZ-FIRE' = 'Kamaz'
+  'KAMAZ-TENT' = 'Kamaz'
+  'MAZ6303' = 'MAZ (automobile plant)'
+  'M818' = 'M939 series 5-ton 6×6 truck'
+  'LAZ695' = 'LAZ-695'
+  'LIAZ677' = 'LiAZ-677'
+  
+  # Ships
+  'Kuznetsov carrier' = 'Russian aircraft carrier Admiral Kuznetsov'
+  'KUZNECOW' = 'Russian aircraft carrier Admiral Kuznetsov'
+  'Molniya Tarantul' = 'Tarantul-class corvette'
+  'Molniya (Tarantul)' = 'Tarantul-class corvette'
+  'Kilo submarine' = 'Kilo-class submarine'
+  'KILO' = 'Kilo-class submarine'
 }
 
 New-Item -ItemType Directory -Path $OutDir -Force | Out-Null

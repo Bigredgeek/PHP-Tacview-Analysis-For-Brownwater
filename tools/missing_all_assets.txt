@@ -1,0 +1,52 @@
+C-17A Globemaster III
+E-2C Hawkeye
+E-3A Sentry
+JF-17 Thunder
+Ka-50 Black Shark
+Mi-24V Hind-E
+Mi-8MT Hip
+Mirage 2000-5
+MQ-9 Reaper
+P-51D Mustang
+RQ-1A Predator
+Shenyang J-11A
+Su-27 Flanker-B
+Su-27 Flanker
+Su-30 Flanker-C
+Su-33 Flanker-D
+Su-34 Fullback
+Su-39 Frogfoot-C
+Tornado IDS
+UH-1H Huey
+UH-60A Black Hawk
+AH-1W SuperCobra
+AH-64D Apache Longbow
+Ka-27 Helix
+Ka-52 Alligator
+Mi-26 Halo
+CH-53E Super Stallion
+KC-135 Stratotanker
+KC-10A Extender
+Gepard
+Leopard 2
+M1 Abrams
+M109 Paladin
+M113
+M2 Bradley
+M48 Patton
+M60 Patton
+BMP-1
+BMP-2
+BMP-3
+BTR-70
+BMD-1
+BTR-D
+LAV-25
+Marder
+GAZ-66
+Humvee
+LVTP-7
+Ural-375
+Kuznetsov carrier
+Molniya Tarantul
+Kilo submarine

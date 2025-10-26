@@ -1,0 +1,113 @@
+C-17A Globemaster III
+C17
+C130
+C13
+E-2C Hawkeye
+E-3A Sentry
+JF-17 Thunder
+Ka-50 Black Shark
+Ka-50 Hokum-A
+KA50
+Ka-27 Helix
+KA27
+Ka-52 Alligator
+KA52
+Mi-24V Hind-E
+MI-24W
+Mi-26 Halo
+MI-26
+Mi-8MT Hip
+MI-8MT
+Mirage 2000-5
+MQ-9 Reaper
+P-51D Mustang
+RQ-1A Predator
+Shenyang J-11A
+Su-27 Flanker-B
+Su-27 Flanker
+Su-30 Flanker-C
+Su-33 Flanker-D
+Su-34 Fullback
+Su-39 Frogfoot-C
+Tornado IDS
+UH-1H Huey
+UH-60A Black Hawk
+AH-1W SuperCobra
+AH-1W
+AH-64D Apache Longbow
+AH64A
+AB212
+KC-135 Stratotanker
+KC-10A Extender
+KC10A
+F117
+F14A
+F15
+F16
+F16A
+F18-C
+F4E
+F5-E
+B1B
+B52
+IL76MD
+IL78M
+AN26
+AN30
+A50
+MiG-29S Fulcrum-C
+MIG29
+MIG23
+MIG25
+MIG27
+CH53
+M1 Abrams
+M1
+M48 Patton
+M48
+M60 Patton
+M60
+M26
+Leopard 2
+LEOPARD2
+leopard-2A4
+M2 Bradley
+M2
+M113
+BMP-1
+BMP-2
+BMP3
+BMD1
+BTR-D
+BTR70
+LAV25
+Marder
+MARDER
+MCV80
+LVTP7
+M109 Paladin
+M109
+BM21-40
+Gepard
+GUEPARD
+Ural-375 ZU-23
+Ural-375
+GAZ-66
+GAZ66
+GAZ66-Searchlight
+GAZ3307
+GAZ3308
+Humvee
+HUMMER
+KAMAZ-FIRE
+KAMAZ-TENT
+MAZ6303
+M818
+LAZ695
+LIAZ677
+Kuznetsov carrier
+KUZNECOW
+Molniya Tarantul
+Molniya (Tarantul)
+Kilo submarine
+KILO

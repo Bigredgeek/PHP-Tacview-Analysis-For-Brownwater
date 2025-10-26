@@ -8,6 +8,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added - 2025-10-26
+#### Comprehensive Asset Icon Update - Phase 2
+- **MAJOR EXPANSION**: Added Wikipedia mappings and downloaded high-quality images for **105+ additional military assets**
+- Expanded `tools/auto_curate_icons.ps1` with comprehensive vehicle, ship, and aircraft variant coverage:
+  - **Helicopters**: Mi-24V Hind-E, Mi-26 Halo, Ka-27 Helix, Ka-50 Black Shark, AH-1W SuperCobra, Mi-28N Havoc
+  - **Ground Vehicles - Tanks**: M1 Abrams, M48 Patton, Leopard 2
+  - **Ground Vehicles - IFVs/APCs**: M2 Bradley, M109 Paladin, BM-21 Grad, Gepard SPAAG
+  - **Ground Vehicles - Trucks/Transport**: GAZ-66, Ural-375
+  - **Ships**: Kuznetsov carrier, Molniya Tarantul corvette, Kilo submarine
+  - **Aircraft Variants**: Shorthand names (C17, C130, KC10A, MIG23/25/27/29)
+- Successfully downloaded **16 new high-quality Wikipedia images** via automated curator and Wikimedia Commons direct:
+  - **MiG-27**: Downloaded from Wikimedia Commons `File:MiG-27 take off.jpg` (CC BY-SA 2.0) - Indian Air Force image
+  - **Mi-28N Havoc**: Added filename variant mapping from Mi-28N Havoc-B, created copy to match Tacview XML requirements
+  - **Su-25T Frogfoot-C**: Manual download from Wikimedia Commons `File:Su-25T Zhukovsky (22502365726).jpg` (CC BY-SA 2.0) - Rob Schleiffert/Flickr, 1995 MAKS Airshow
+  - 2 remaining FAILED downloads: Ka-52 Alligator, M60 Patton (Wikipedia API lookup issues)
+- Normalized **97 total images** to standard 16:9 @ 640px format using `tools/normalize_icons.php`
+- Deployed all normalized images to `public/objectIcons/` for Vercel production
+- Fixed **17 duplicate key errors** in PowerShell hashtable by removing redundant mappings:
+  - Aircraft: C-17A, E-2C, E-3A, JF-17, Mirage 2000-5, MiG-29S, MQ-9, P-51D, RQ-1A, Shenyang J-11A
+  - Su-27/30/33/34 variants, Tornado IDS
+  - Ground vehicles: MARDER (case-insensitive duplicate), Ural-375 ZU-23
+  - Tankers: KC-135, KC-10A
+- **Cleaned up deprecated images**: Removed **40 old low-quality shorthand image files** (1-2KB each) that were replaced with high-quality Wikipedia versions:
+  - Aircraft: A50, B1B, B52, F117, F14A, F15, F16, F16A, F18-C, F4E, IL76MD, IL78M, AN26, AN30
+  - Helicopters: AH-1W, AH64A, CH53, KA27, KA50, KA52, MI-26, MI-8MT
+  - Transport: C13, C130, C17, KC10A
+  - Vehicles: GAZ66, M1, M2, M48, M60, M109, M26, leopard-2A4, LEOPARD2
+  - Ships: KILO, KUZNECOW
+  - Aircraft shorthand: MIG23, MIG25, MIG29
+  - All deprecated files removed from both `objectIcons/` and `public/objectIcons/` directories
+- **Database Coverage**: 247 optimized asset files in objectIcons (down from 287 after cleanup), all high-quality Wikipedia replacements
+- ✅ **All Tacview XML-referenced aircraft now have high-quality images** (Mi-28N Havoc, MiG-27 resolved)
+
+#### Helicopter Icon Updates
+- Added 3 missing helicopters to aircraft icon manifest and comprehensive DCS database
+- Downloaded and replaced low-quality helicopter images with high-quality Wikipedia versions:
+  - **Mi-24P Hind-F**: Replaced with CC BY-SA 3.0 image from Wikimedia Commons (Mil Mi-24)
+  - **CH-47F Chinook**: Replaced with Public Domain U.S. Army image (Boeing CH-47 Chinook)
+  - **Mi-28N Havoc-B**: Replaced with CC BY-SA 2.0 image from Wikimedia Commons (Mil Mi-28)
+- Expanded `tools/auto_curate_icons.ps1` Wikipedia mapping to include complete helicopter coverage:
+  - Russian/Soviet: Mi-24P/V, Mi-28N, Ka-50
+  - American: CH-47F, UH-1H, UH-60A, AH-64D
+- All 3 helicopter images normalized to standard 16:9 @ 640px format and deployed to production
+- Updated `data/aircraft_icons_manifest.json` with complete metadata, licenses, and attribution
+
 #### Production Deployment Complete
 - Normalized all 74 aircraft thumbnails to standard 16:9 aspect ratio @ 640px width using `tools/normalize_icons.php`
 - Deployed all aircraft icons to `public/objectIcons/` for Vercel production environment

@@ -445,6 +445,213 @@
       "targetFilename": "Tu-95MS_Bear-H.jpg",
       "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Tupolev_Tu-95_over_Moscow_Kustov_%28cropped%29.jpg",
       "descriptionPage": "https://en.wikipedia.org/wiki/Tupolev+Tu-95"
+    },
+    {
+      "name": "Mi-24P Hind-F",
+      "targetFilename": "Mi-24P_Hind-F.jpg",
+      "suggestedCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Mil_Mi-24",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Mi24CP_%28modified%29_b.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Sergey Krivchikov",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mil+Mi-24"
+    },
+    {
+      "name": "CH-47F Chinook",
+      "targetFilename": "CH-47F_Chinook.jpg",
+      "suggestedCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Boeing_CH-47_Chinook",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/CH-47_assigned_to_3rd_General_Support_Aviation_Battalion%2C_82nd_Combat_Aviation_Brigade.jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Army",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+CH-47+Chinook"
+    },
+    {
+      "name": "Mi-28N Havoc-B",
+      "targetFilename": "Mi-28N_Havoc-B.jpg",
+      "suggestedCategoryUrl": "https://commons.wikimedia.org/wiki/Category:Mil_Mi-28",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Russian_Air_Force%2C_RF-13489%2C_Mil_Mi-28NM_%2849581609382%29.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Dmitry Terekhov",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mil+Mi-28"
+    },
+    {
+      "name": "AH-1W SuperCobra",
+      "targetFilename": "AH-1W_SuperCobra.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/AH-1W_Super_Cobra_assigned_to_HMLA_167.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Bell+AH-1+SuperCobra"
+    },
+    {
+      "name": "GAZ-66",
+      "targetFilename": "GAZ-66.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Red_GAZ-66.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/GAZ-66"
+    },
+    {
+      "name": "Ka-27 Helix",
+      "targetFilename": "Ka-27_Helix.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/A_Russian_Helix_KA-27_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Kamov+Ka-27"
+    },
+    {
+      "name": "KC-10A Extender",
+      "targetFilename": "KC-10A_Extender.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/KC-10_Extender_%282151957820%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/McDonnell+Douglas+KC-10+Extender"
+    },
+    {
+      "name": "Kilo submarine",
+      "targetFilename": "Kilo_submarine.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/%C2%AB%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%C2%BB.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Kilo-class+submarine"
+    },
+    {
+      "name": "Kuznetsov carrier",
+      "targetFilename": "Kuznetsov_carrier.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/MilitarySportsHoliday2017-03.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Russian+aircraft+carrier+Admiral+Kuznetsov"
+    },
+    {
+      "name": "Leopard 2",
+      "targetFilename": "Leopard_2.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Leopard_2_A7V_313_Bad_Frankenhausen_2024.JPG",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Leopard+2"
+    },
+    {
+      "name": "M1 Abrams",
+      "targetFilename": "M1_Abrams.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/M1A2_SEP_v3.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/M1+Abrams"
+    },
+    {
+      "name": "M109 Paladin",
+      "targetFilename": "M109_Paladin.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kings_of_battle_keep_the_fire%3B_1-9_FA_fires_its_last_rounds_140910-A-CW513-046.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/M109+howitzer"
+    },
+    {
+      "name": "M2 Bradley",
+      "targetFilename": "M2_Bradley.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/US_M2A1_Bradley_deployed_to_Saudi_Arabia_during_Operation_Desert_Shield.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/M2+Bradley"
+    },
+    {
+      "name": "M48 Patton",
+      "targetFilename": "M48_Patton.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Kampfpanzer_M_48_A2_C.JPG",
+      "descriptionPage": "https://en.wikipedia.org/wiki/M48+Patton"
+    },
+    {
+      "name": "Mi-26 Halo",
+      "targetFilename": "Mi-26_Halo.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/MAKS_Airshow_2013_%28Ramenskoye_Airport%2C_Russia%29_%28cropped%29%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mil+Mi-26"
+    },
+    {
+      "name": "Molniya Tarantul",
+      "targetFilename": "Molniya_Tarantul.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/ORP_Metalowiec_in_Gdynia.JPG",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Tarantul-class+corvette"
+    },
+    {
+      "name": "Ural-375",
+      "targetFilename": "Ural-375.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Ural375_nva.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Ural-375"
+    },
+    {
+      "name": "AH-64D Apache Longbow",
+      "targetFilename": "AH-64D_Apache_Longbow.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/AH-64D_Apache_Longbow.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+AH-64+Apache"
+    },
+    {
+      "name": "C-17A Globemaster III",
+      "targetFilename": "C-17A_Globemaster_III.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/C-17_test_sortie.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+C-17+Globemaster+III"
+    },
+    {
+      "name": "E-2C Hawkeye",
+      "targetFilename": "E-2C_Hawkeye.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/E-2D_Advanced_Hawkeye_aircraft_conduct_a_test_flight.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Grumman+E-2+Hawkeye"
+    },
+    {
+      "name": "E-3A Sentry",
+      "targetFilename": "E-3A_Sentry.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/E-3_Sentry_Airborne_Warning_and_Control_System_%28AWACS%29_conducts_a_mission.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+E-3+Sentry"
+    },
+    {
+      "name": "Ka-50 Hokum-A",
+      "targetFilename": "Ka-50_Hokum-A.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Russian_Air_Force_Kamov_Ka-50.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Kamov+Ka-50"
+    },
+    {
+      "name": "KC-135 Stratotanker",
+      "targetFilename": "KC-135_Stratotanker.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/F-15C_Eagle_from_the_67th_Fighter_Squadron_at_Kadena_AB_is_refueled_by_a_KC-135R_Stratotanker_from_the_909th_Air_Refueling_Squadron_.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Boeing+KC-135+Stratotanker"
+    },
+    {
+      "name": "Mi-24V Hind-E",
+      "targetFilename": "Mi-24V_Hind-E.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Mi24CP_%28modified%29_b.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mil+Mi-24"
+    },
+    {
+      "name": "Mi-8MT Hip",
+      "targetFilename": "Mi-8MT_Hip.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Mil_Mi-8P%2C_Baltic_Airlines_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mil+Mi-8"
+    },
+    {
+      "name": "MiG-29S Fulcrum-C",
+      "targetFilename": "MiG-29S_Fulcrum-C.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/VVS_100th_IMG_0691_%287727464290%29_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mikoyan+MiG-29"
+    },
+    {
+      "name": "Su-27 Flanker",
+      "targetFilename": "Su-27_Flanker.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sukhoi_Su-27SKM_at_MAKS-2005_airshow.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-27"
+    },
+    {
+      "name": "Su-27 Flanker-B",
+      "targetFilename": "Su-27_Flanker-B.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sukhoi_Su-27SKM_at_MAKS-2005_airshow.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-27"
+    },
+    {
+      "name": "Su-33 Flanker-D",
+      "targetFilename": "Su-33_Flanker-D.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sukhoi_Su-33_77_RED_%2830268117476%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-33"
+    },
+    {
+      "name": "Su-34 Fullback",
+      "targetFilename": "Su-34_Fullback.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/MAKS2015part1-10_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-34"
+    },
+    {
+      "name": "Su-39 Frogfoot-C",
+      "targetFilename": "Su-39_Frogfoot-C.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Sukhoi_Su-25_of_the_Russian_Air_Force_landing_at_Vladivostok_%288683076150%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-25"
+    },
+    {
+      "name": "Tornado IDS",
+      "targetFilename": "Tornado_IDS.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/RAF_Tornado_GR4_MOD_45155233.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Panavia+Tornado"
+    },
+    {
+      "name": "Ural-375 ZU-23",
+      "targetFilename": "Ural-375_ZU-23.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/ZU-23-2_in_Saint_Petersburg.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/ZU-23-2"
     }
   ]
 }
