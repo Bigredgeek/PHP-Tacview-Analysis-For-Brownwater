@@ -17,6 +17,7 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 echo '<head>';
 echo '<title>PHP Tacview Debriefing</title>';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" />';
 echo '<link rel="stylesheet" href="/tacview.css" />';
 echo '<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />';
 echo '</head>';

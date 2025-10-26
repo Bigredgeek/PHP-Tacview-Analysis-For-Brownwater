@@ -262,3 +262,131 @@ table.eventsTable tr td:nth-child(3n)
 {
 	background-color: #d3d3d3;
 }
+
+/* RESPONSIVE DESIGN - MOBILE & TABLET */
+
+/* Mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+	body {
+		padding: 10px;
+	}
+	
+	.header-container {
+		width: 95%;
+		flex-direction: column;
+		min-height: auto;
+		margin-bottom: 20px;
+	}
+	
+	.logo-link {
+		position: static;
+		transform: none;
+		margin-bottom: 15px;
+	}
+	
+	.logo {
+		max-width: 180px;
+		margin: 0 auto;
+	}
+	
+	h1 {
+		font-size: 20px;
+	}
+	
+	h2 {
+		font-size: 18px;
+	}
+	
+	table {
+		width: 100%;
+		font-size: 9px;
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	
+	table.presentationTable {
+		width: 100%;
+	}
+	
+	td, th {
+		padding: 3px;
+		font-size: 10px;
+	}
+	
+	tr.statisticsTable, th.statisticsTable {
+		height: auto;
+	}
+	
+	img.statisticsTable {
+		max-width: 30px;
+	}
+	
+	img.hiddenStatsTable {
+		max-width: 120px;
+	}
+	
+	td.hiddenStatsTable {
+		padding: 10px;
+	}
+}
+
+/* Tablet devices (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	body {
+		padding: 15px;
+	}
+	
+	.header-container {
+		width: 90%;
+	}
+	
+	.logo {
+		max-width: 250px;
+	}
+	
+	table {
+		width: 95%;
+		font-size: 10px;
+	}
+	
+	h1 {
+		font-size: 22px;
+	}
+	
+	h2 {
+		font-size: 19px;
+	}
+}
+
+/* Very small devices (up to 480px) */
+@media screen and (max-width: 480px) {
+	.logo {
+		max-width: 140px;
+	}
+	
+	h1 {
+		font-size: 18px;
+	}
+	
+	h2 {
+		font-size: 16px;
+	}
+	
+	table {
+		font-size: 8px;
+	}
+	
+	td, th {
+		padding: 2px;
+		font-size: 9px;
+	}
+	
+	img.statisticsTable {
+		max-width: 25px;
+	}
+	
+	img.hiddenStatsTable {
+		max-width: 100px;
+	}
+}
