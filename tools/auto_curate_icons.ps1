@@ -189,6 +189,9 @@ $wikiTitleMap = @{
   'MQ-9 Reaper' = 'General Atomics MQ-9 Reaper'
   'RQ-1A Predator' = 'General Atomics MQ-1 Predator'
   
+  # OV-10 Bronco (FAC/attack aircraft)
+  'OV-10A Bronco' = 'North American Rockwell OV-10 Bronco'
+  
   # WWII German aircraft
   'Bf 109 K-4' = 'Messerschmitt Bf 109'
   'Fw 190 A-8' = 'Focke-Wulf Fw 190'

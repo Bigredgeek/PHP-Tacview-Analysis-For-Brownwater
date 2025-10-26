@@ -652,6 +652,12 @@
       "targetFilename": "Ural-375_ZU-23.jpg",
       "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/ZU-23-2_in_Saint_Petersburg.jpg",
       "descriptionPage": "https://en.wikipedia.org/wiki/ZU-23-2"
+    },
+    {
+      "name": "OV-10A Bronco",
+      "targetFilename": "OV-10A_Bronco.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/NASA_OV-10.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/North+American+Rockwell+OV-10+Bronco"
     }
   ]
 }

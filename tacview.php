@@ -145,6 +145,21 @@ class tacview
 	//
 	// get correct object icon filename with fallback mapping
 	//
+	//
+	// Correct DCS aircraft misidentifications (XML export bugs)
+	//
+	public function correctAircraftName(string $aircraftName, string $groupName = ""): string
+	{
+		// DCS sometimes exports OV-10A Bronco as "B-1 Lancer" - detect by group name
+		if ($aircraftName == "B-1 Lancer" && strpos($groupName, "BRONCO") !== false) {
+			return "OV-10A Bronco";
+		}
+		
+		// Add more corrections here as needed
+		
+		return $aircraftName;
+	}
+
 	public function getObjectIcon(string $aircraftName): string
 	{
 		// Clean the aircraft name for filename
@@ -403,19 +418,22 @@ class tacview
 
 			if ($event["PrimaryObject"]["Type"] == "Aircraft" or $event["PrimaryObject"]["Type"] == "Helicopter") 
 			{
-				if(array_key_exists("Pilot",$event["PrimaryObject"]))
-				{
-					$primaryObjectPilot = $event["PrimaryObject"]["Pilot"];
-					// crea il ramo per ogni Pilota (di aereo o di elicottero)
-					$this->stats[$primaryObjectPilot]["Aircraft"] = $event["PrimaryObject"]["Name"];
-					$this->stats[$primaryObjectPilot]["Type"] = $event["PrimaryObject"]["Type"];
-				}
-				else
-				{
-					continue;
-				}
-
-				if(array_key_exists("Group",$event["PrimaryObject"]))
+			if(array_key_exists("Pilot",$event["PrimaryObject"]))
+			{
+				$primaryObjectPilot = $event["PrimaryObject"]["Pilot"];
+				
+				// Correct aircraft name for DCS export bugs (e.g., OV-10A exported as B-1 Lancer)
+				$groupName = $event["PrimaryObject"]["Group"] ?? "";
+				$correctedAircraftName = $this->correctAircraftName($event["PrimaryObject"]["Name"], $groupName);
+				
+				// crea il ramo per ogni Pilota (di aereo o di elicottero)
+				$this->stats[$primaryObjectPilot]["Aircraft"] = $correctedAircraftName;
+				$this->stats[$primaryObjectPilot]["Type"] = $event["PrimaryObject"]["Type"];
+			}
+			else
+			{
+				continue;
+			}				if(array_key_exists("Group",$event["PrimaryObject"]))
 				{
 					$this->stats[$primaryObjectPilot]["Group"] = $event["PrimaryObject"]["Group"] ?? ""; // ADDED field Group by Aikanaro
 				}
