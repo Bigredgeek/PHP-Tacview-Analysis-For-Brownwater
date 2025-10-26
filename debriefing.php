@@ -15,7 +15,7 @@ require_once "./tacview.php";
 	<body>
 		<div class="header-container">
 			<a href="https://sites.google.com/airgoons.com/songofthenibelungs/home" class="logo-link" target="_blank">
-				<img src="AGWG_ICON.png" alt="AGWG Logo" class="logo" />
+				<img src="merc_logo.png" alt="Merc Logo" class="logo" />
 			</a>
 			<h1>PHP Tacview Debriefing</h1>
 		</div>

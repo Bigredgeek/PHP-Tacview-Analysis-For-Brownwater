@@ -23,7 +23,7 @@ echo '</head>';
 echo '<body>';
 echo '<div class="header-container">';
 echo '<a href="https://sites.google.com/airgoons.com/songofthenibelungs/home" class="logo-link" target="_blank">';
-echo '<img src="/AGWG_ICON.png" alt="AGWG Logo" class="logo" />';
+echo '<img src="/merc_logo.png" alt="Merc Logo" class="logo" />';
 echo '</a>';
 echo '<h1>PHP Tacview Debriefing</h1>';
 echo '</div>';
