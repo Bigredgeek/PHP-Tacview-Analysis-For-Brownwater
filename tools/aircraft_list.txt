@@ -1,25 +1,38 @@
-Found 23 unique aircraft across 5 XML files
+Found 36 unique aircraft across 7 XML files
 
-A-4E Skyhawk	A-4E_Skyhawk.jpg	local:no	count:107
-A-10A Thunderbolt II	A-10A_Thunderbolt_II.jpg	local:yes	count:137
+A-4E Skyhawk	A-4E_Skyhawk.jpg	local:yes	count:107
+A-10A Thunderbolt II	A-10A_Thunderbolt_II.jpg	local:yes	count:181
 A-10C Thunderbolt II	A-10C_Thunderbolt_II.jpg	local:yes	count:87
-A-50 Mainstay	A-50_Mainstay.jpg	local:no	count:6
+A-29 Super Tucano	A-29_Super_Tucano.jpg	local:no	count:142
+A-50 Mainstay	A-50_Mainstay.jpg	local:yes	count:6
 AJS 37 Viggen	AJS_37_Viggen.jpg	local:yes	count:171
+An-26B Curl	An-26B_Curl.jpg	local:no	count:4
+An-30M Clank	An-30M_Clank.jpg	local:no	count:8
 AV-8B Harrier II NA	AV-8B_Harrier_II_NA.jpg	local:yes	count:88
+B-1 Lancer	B-1_Lancer.jpg	local:no	count:266
+C-130 Hercules	C-130_Hercules.jpg	local:yes	count:18
 F-4E Phantom II	F-4E_Phantom_II.jpg	local:yes	count:310
+F-5E-3 Tiger II	F-5E-3_Tiger_II.jpg	local:no	count:4
+F-14A Tomcat	F-14A_Tomcat.jpg	local:yes	count:24
 F-14B Tomcat	F-14B_Tomcat.jpg	local:yes	count:98
 F-15C Eagle	F-15C_Eagle.jpg	local:yes	count:80
 F-15E Strike Eagle	F-15E_Strike_Eagle.jpg	local:yes	count:72
-F-16C Fighting Falcon	F-16C_Fighting_Falcon.jpg	local:yes	count:194
-F-104 Starfighter	F-104_Starfighter.jpg	local:no	count:75
-F/A-18C Hornet	F_A-18C_Hornet.jpg	local:yes	count:205
+F-16A Fighting Falcon	F-16A_Fighting_Falcon.jpg	local:no	count:20
+F-16C Fighting Falcon	F-16C_Fighting_Falcon.jpg	local:yes	count:284
+F-104 Starfighter	F-104_Starfighter.jpg	local:yes	count:75
+F/A-18A Hornet	F_A-18A_Hornet.jpg	local:no	count:18
+F/A-18C Hornet	F_A-18C_Hornet.jpg	local:yes	count:335
+F4U Corsair	F4U_Corsair.jpg	local:no	count:12
+MiG-19P Farmer-B	MiG-19P_Farmer-B.jpg	local:no	count:10
 MiG-21bis Fishbed-L/N	MiG-21bis_Fishbed-L_N.jpg	local:yes	count:335
 MiG-23MLD Flogger-K	MiG-23MLD_Flogger-K.jpg	local:yes	count:291
 MiG-25PD Foxbat-E	MiG-25PD_Foxbat-E.jpg	local:yes	count:49
 MiG-29 Fulcrum	MiG-29_Fulcrum.jpg	local:yes	count:57
 MiG-29A Fulcrum-A	MiG-29A_Fulcrum-A.jpg	local:yes	count:36
 Mirage 2000C	Mirage_2000C.jpg	local:yes	count:164
-Mirage F1 EE	Mirage_F1_EE.jpg	local:no	count:155
+Mirage F1 EE	Mirage_F1_EE.jpg	local:yes	count:173
+P-47D Thunderbolt	P-47D_Thunderbolt.jpg	local:no	count:162
 Su-17M4 Fitter-K	Su-17M4_Fitter-K.jpg	local:yes	count:132
-Su-25 Frogfoot	Su-25_Frogfoot.jpg	local:no	count:4
-Su-25T Frogfoot	Su-25T_Frogfoot.jpg	local:yes	count:78
+Su-24M Fencer-D	Su-24M_Fencer-D.jpg	local:yes	count:38
+Su-25 Frogfoot	Su-25_Frogfoot.jpg	local:yes	count:48
+Su-25T Frogfoot	Su-25T_Frogfoot.jpg	local:yes	count:144

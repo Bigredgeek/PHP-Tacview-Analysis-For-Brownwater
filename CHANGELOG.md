@@ -7,6 +7,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2025-10-25
+#### Comprehensive DCS World Aircraft Database
+- Massively expanded Wikipedia article title mapping in `tools/auto_curate_icons.ps1` from 36 to **100+ aircraft**
+- Added complete database of all known DCS World aircraft including:
+  - **Flyable modules**: All current and historical DCS modules
+  - **AI units**: Complete set of AI-only aircraft in DCS World
+  - **All variants**: Multiple versions of same aircraft families (e.g., F-15C, F-15E, F-15ESE)
+- Aircraft families now covered:
+  - A-10 family (A/C/C II variants)
+  - American attack aircraft (A-4, A-6, A-7, A-29, AV-8B)
+  - All F-series fighters (F-4, F-5, F-14A/B, F-15C/E, F-16A/C, F-86, F-104, F-117, F/A-18A/C/E/F)
+  - WWII American fighters (F4F, F4U, F6F, P-40, P-47, P-51 variants)
+  - Complete MiG series (MiG-15bis, 19, 21, 23, 25, 27, 29 variants, 31)
+  - Complete Sukhoi series (Su-17, Su-22, Su-24, Su-25, Su-27, Su-30 variants, Su-33, Su-34)
+  - French aircraft (Mirage 2000/F1 variants, Rafale M, Super Etendard)
+  - Saab Viggen variants (AJ, AJS, JA)
+  - Bombers (B-1B, B-52H, Tu-22M3, Tu-95MS, Tu-142, Tu-160)
+  - Transports (C-5, C-17A, C-130, C-130J, IL-76MD, IL-78M, An-26B, An-30M)
+  - AWACS (E-2C/D, E-3A, A-50)
+  - Tankers (KC-10A, KC-135 variants)
+  - Trainers (L-39C/ZA, MB-339, T-45C)
+  - UAVs (MQ-9 Reaper, RQ-1A Predator)
+  - WWII Axis aircraft (Bf 109 K-4, Fw 190 A-8/D-9, A6M5 Zero, Ki-61-I)
+  - WWII Allied aircraft (Spitfire LF Mk. IX, Mosquito FB VI)
+  - Other notable aircraft (JF-17 Thunder, J-11A, JH-7A, Tornado IDS/GR4)
+- Pre-generated associations enable automatic high-quality Wikipedia thumbnail downloads for any aircraft that appears in future debriefing files
+- Total potential aircraft icon coverage: **100+ unique aircraft types across all eras**
+
+#### Aircraft Icon Expansion
+- Expanded Wikipedia article title mapping from 23 to 36 aircraft in `tools/auto_curate_icons.ps1`
+- Added mappings for newly discovered aircraft:
+  - A-29 Super Tucano → Embraer EMB 314 Super Tucano
+  - An-26B Curl → Antonov An-26
+  - An-30M Clank → Antonov An-30
+  - B-1 Lancer → Rockwell B-1 Lancer
+  - F-5E-3 Tiger II → Northrop F-5
+  - F-16A Fighting Falcon → General Dynamics F-16 Fighting Falcon
+  - F/A-18A Hornet → McDonnell Douglas F/A-18 Hornet
+  - F4U Corsair → Vought F4U Corsair
+  - MiG-19P Farmer-B → Mikoyan-Gurevich MiG-19
+  - P-47D Thunderbolt → Republic P-47 Thunderbolt
+  - Su-24M Fencer-D → Sukhoi Su-24
+  - C-130 Hercules (already had mapping)
+- Successfully downloaded and normalized 10 new high-quality Wikipedia infobox thumbnails (10/10 success)
+- All new thumbnails normalized to 16:9 aspect ratio at 640px width using `tools/normalize_icons.php`
+- Copied all aircraft thumbnails to `public/objectIcons/` for Vercel deployment
+- Total aircraft icon coverage: 36 unique aircraft types
+
 ### Changed - 2025-10-25
 - Replaced AGWG logo (AGWG_ICON.png) with Merc logo (merc_logo.png) across all files:
   - Updated `debriefing.php`

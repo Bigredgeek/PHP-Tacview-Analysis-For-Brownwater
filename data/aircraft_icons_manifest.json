@@ -211,6 +211,66 @@
       "license": "CC BY-SA 3.0",
       "attribution": "<a href=\"//commons.wikimedia.org/wiki/User:Altoing\" title=\"User:Altoing\">Altoing</a>",
       "descriptionPage": "https://en.wikipedia.org/wiki/Sukhoi+Su-25"
+    },
+    {
+      "name": "A-29 Super Tucano",
+      "targetFilename": "A-29_Super_Tucano.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Embraer_EMB-314_Super_Tucano_Brazilian_Air_Force_1.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Embraer+EMB+314+Super+Tucano"
+    },
+    {
+      "name": "An-26B Curl",
+      "targetFilename": "An-26B_Curl.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/An-26_Ni%C2%B5_Nishava_Serbien_Marko_Stojkovic_IMG_2634-1-2.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Antonov+An-26"
+    },
+    {
+      "name": "An-30M Clank",
+      "targetFilename": "An-30M_Clank.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/An-30_-_RA-26226.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Antonov+An-30"
+    },
+    {
+      "name": "B-1 Lancer",
+      "targetFilename": "B-1_Lancer.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/B-1B_air_refueling.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Rockwell+B-1+Lancer"
+    },
+    {
+      "name": "F-16A Fighting Falcon",
+      "targetFilename": "F-16A_Fighting_Falcon.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/F-16_June_2008.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/General+Dynamics+F-16+Fighting+Falcon"
+    },
+    {
+      "name": "F-5E-3 Tiger II",
+      "targetFilename": "F-5E-3_Tiger_II.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/J-3005.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Northrop+F-5"
+    },
+    {
+      "name": "F/A-18A Hornet",
+      "targetFilename": "F_A-18A_Hornet.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/FA-18C_desert_refueling.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/McDonnell+Douglas+F%2fA-18+Hornet"
+    },
+    {
+      "name": "F4U Corsair",
+      "targetFilename": "F4U_Corsair.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Vought_F4U_Corsair_%28USMC%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Vought+F4U+Corsair"
+    },
+    {
+      "name": "MiG-19P Farmer-B",
+      "targetFilename": "MiG-19P_Farmer-B.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Mikoyan-Gurevich_MiG-19S_Farmer_USAF.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Mikoyan-Gurevich+MiG-19"
+    },
+    {
+      "name": "P-47D Thunderbolt",
+      "targetFilename": "P-47D_Thunderbolt.jpg",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/P47_Thunderbolt_-_Chino_2014_%28cropped%29.jpg",
+      "descriptionPage": "https://en.wikipedia.org/wiki/Republic+P-47+Thunderbolt"
     }
   ]
 }
