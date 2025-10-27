@@ -3,21 +3,18 @@
   "version": 2,
   "outputDirectory": "public",
   "functions": {
-    "*.php": {
-      "runtime": "vercel-php@0.7.4",
-      "memory": 1024,
-      "maxDuration": 10
-    },
     "api/*.php": {
-      "runtime": "vercel-php@0.7.4",
-      "memory": 1024,
-      "maxDuration": 10
+      "runtime": "vercel-php@0.7.4"
     }
   },
   "rewrites": [
     {
       "source": "/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/debriefing.php",
+      "destination": "/api/debriefing"
     }
   ]
 }
