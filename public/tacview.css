@@ -362,10 +362,12 @@ th {
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #0d0221;
+	color: #00b8cc;
 	border-bottom: 2px solid #ff006e;
 	position: relative;
-	text-shadow: 0 0 2px rgba(255, 0, 110, 0.3);
+	text-shadow: 
+		0 0 10px rgba(0, 245, 255, 0.8),
+		0 0 15px rgba(0, 245, 255, 0.4);
 }
 
 th::after {
@@ -476,6 +478,11 @@ td.presentationTable:nth-child(2)
 {
 	text-align: left;
 	background: rgba(255, 255, 255, 0.95);
+	color: #00b8cc;
+	font-weight: 600;
+	text-shadow: 
+		0 0 10px rgba(0, 245, 255, 0.8),
+		0 0 15px rgba(0, 245, 255, 0.4);
 }
 
 /* STATISTICS TABLE */
