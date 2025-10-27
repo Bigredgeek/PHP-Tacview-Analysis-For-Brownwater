@@ -8,6 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added - 2025-10-26
+#### Neon Dystopia Visual Theme Implementation
+- **MAJOR VISUAL OVERHAUL**: Implemented comprehensive cyberpunk/dystopian aesthetic for debriefing pages
+- **Animated Background System**:
+  - Dual-layer animated gradients (pink→purple→cyan→magenta) with 20-second cycle
+  - Geometric pattern overlay with animated glitch scanlines
+  - Corporate grid system with pulsing neon lines
+  - Parallax depth effect with multiple animation layers
+- **Glitch Effects**:
+  - RGB chromatic aberration on page load
+  - Digital corruption text effects on headers
+  - Glitch animation on hover states
+  - Random color channel displacement
+- **Neon UI Elements**:
+  - Hot pink/magenta primary accent (#ff006e, #f72585)
+  - Electric purple secondary (#7209b7, #560bad)
+  - Toxic cyan highlights (#00f5ff, #4cc9f0)
+  - Neon glow effects on tables and borders
+  - Pulsing box shadows for depth
+- **Typography Enhancements**:
+  - Futuristic sans-serif font stack (Orbitron, Rajdhani fallbacks)
+  - Text shadow effects with neon glow
+  - Enhanced readability with backdrop filters
+  - Holographic shimmer on headers
+- **Interactive Elements**:
+  - Smooth color transitions on hover
+  - Enhanced logo with neon border glow
+  - Cyberpunk-style table highlights
+  - Angular geometric decorations
+- **Performance**: All animations GPU-accelerated with CSS transforms
+- **Accessibility**: Maintained high contrast ratios despite vibrant color palette
+
+### Added - 2025-10-26
 #### Comprehensive Asset Icon Update - Phase 2
 - **MAJOR EXPANSION**: Added Wikipedia mappings and downloaded high-quality images for **105+ additional military assets**
 - Expanded `tools/auto_curate_icons.ps1` with comprehensive vehicle, ship, and aircraft variant coverage:
