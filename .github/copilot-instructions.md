@@ -6,8 +6,8 @@ This is a PHP-based Tacview analysis tool for DCS (Digital Combat Simulator) deb
 ## Code Style & Standards
  *****THE FOLLOWING IS VERY IMPORTANT*****
 - If this project does not have a changelog.md file, make one before making any changes.
-- Before making any changes read the changelog.md file and see if what you are planning has already been tried by other developers
-- After any changes update the changelog.md file with what was done for future developers to reference.
+- Before making any changes, you MUST read the ENTIRETY of the changelog.md file and see if what you are planning has already been tried by other developers
+- As you make any changes, update the changelog.md file with what was done for future developers to reference.
 - Update the changelog as you make changes to the project to avoid recursive loops and ineffective strategies
 - Always run a test on a local server with a real Tacview XML debriefing file after making any PHP changes to ensure no warnings or errors occur, and display it in a browser preview to verify proper functionality.
 - Ensure all relevant changes are copied in the /public/ directory if applicable

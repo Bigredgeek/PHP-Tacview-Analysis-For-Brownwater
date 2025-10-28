@@ -7,6 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed - 2025-10-27
+#### Sticky Table Header - JavaScript Implementation
+- **IMPLEMENTED**: JavaScript-based sticky header for Aircrew Performance Summary table
+  - Replaced CSS `position: sticky` with JavaScript scroll listener (CSS sticky was unreliable with table structure)
+  - Header row switches to `position: fixed` when table reaches top of viewport
+  - Seamlessly transitions back to relative positioning when scrolling back up
+  - Works with variable table sizes (scales with number of pilots/AI)
+  - Maintains all original styling: gradients, colors, shadows, and borders
+- **APPROACH**: JavaScript provides more reliable cross-browser support than CSS sticky for complex table layouts
+- **REASON**: CSS `position: sticky` on table rows/cells is inconsistently supported; JavaScript ensures consistent behavior
+
+#### Sticky Table Header - CSS Refinement
+- **UPDATED**: Replaced JavaScript-based sticky header with pure CSS implementation
+  - Introduced semantic `<thead>`/`<tbody>` structure for statistics table
+  - Switched table to `border-collapse: separate` and `overflow: visible` so CSS `position: sticky` works reliably
+  - Leveraged existing `th.statisticsTable` styling to provide sticky behavior while preserving gradients and shadows
+- **REASON**: JavaScript clone approach caused alignment issues; CSS sticky now works after removing overflow constraints
+
+### Fixed - 2025-10-27
+#### Aircraft Name Correction for Brownwater Mod
+- **ADDED**: New `correctAircraftName()` method to dynamically correct misidentified mod aircraft
+- **FIXED**: OV-10A Bronco aircraft from Brownwater mod now correctly identified
+  - DCS misidentifies OV-10A Bronco as "B-1 Lancer" in Tacview XML export
+  - Solution detects "Bronco" in group name and corrects aircraft name to "OV-10A Bronco"
+  - Proper aircraft icon (OV-10A_Bronco.jpg) now displays instead of B-1 bomber icon
+  - Applied correction during event processing before stats are compiled
+- **APPROACH**: Group name detection instead of simple icon mapping for better accuracy
+- **EXTENSIBLE**: Method can be expanded for other mod aircraft with similar misidentification issues
+- **NOTE**: This fix was specifically requested after previous icon mapping approach was deemed inadequate
+
+### Changed - 2025-10-27
+#### Mission Information Section Styling Update
+- **MODIFIED**: Improved color scheme and readability for Mission Information presentation table
+  - Changed header text (page titles, section headers) to cyan (#00d4e0) to match expanded pilot detail styling
+  - Updated table label colors (NAME:, TIME:, DURATION:) to medium cyan (#00d4e0) with minimal glow
+  - Reduced text-shadow effects for cleaner, more legible text (inspired by "Sorties Flown" section style)
+  - Added subtle black drop shadow instead of heavy glow for better definition
+  - Set consistent font-size (14px) and letter-spacing for labels and data
+  - Changed data values to black (#0d0221) with no text effects for maximum readability
+  - Maintains cyberpunk aesthetic while prioritizing legibility
+- **REASON**: User requested easier-to-read text with reference to cleaner styling from other sections
+
 ### Added - 2025-10-26
 #### Neon Dystopia Visual Theme Implementation
 - **MAJOR VISUAL OVERHAUL**: Implemented comprehensive cyberpunk/dystopian aesthetic for debriefing pages

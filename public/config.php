@@ -17,7 +17,7 @@ return [
     'page_title' => 'PHP Tacview Debriefing',
     'default_language' => 'en',
     
-    // Paths (relative to project root)
-    'debriefings_path' => 'debriefings/*.xml',
-    'core_path' => 'core',  // Path to the submodule
+    // Paths (relative to public directory - go up one level to project root)
+    'debriefings_path' => __DIR__ . '/../debriefings/*.xml',
+    'core_path' => 'core',  // Path to the submodule (relative to project root)
 ];

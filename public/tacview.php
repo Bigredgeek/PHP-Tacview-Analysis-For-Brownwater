@@ -824,7 +824,8 @@ class tacview
 
 		$this->addOutput('<h1>' . $this->L('statsByPilot') . '</h1>');
 		$this->addOutput('<table class="statisticsTable">');
-		$this->addOutput('<tr class="statisticsTable">');
+		$this->addOutput('<thead class="statisticsTable-head">');
+		$this->addOutput('<tr class="statisticsTable sticky-header-row">');
 		$this->addOutput('<th class="statisticsTable">' . $this->L('pilotName') . '</th>');
 	//  $this->addOutput('<th class="statisticsTable">' . $this->L('model') . '</th>');
 		$this->addOutput('<th colspan="2" class="statisticsTable">' . $this->L('aircraft') . '</th>');
@@ -842,6 +843,8 @@ class tacview
 		$this->addOutput('<th class="statisticsTable">' . $this->L('hit') . '</th>');
 		$this->addOutput('<th class="statisticsTable">' . $this->L('destroyed') . '</th>');
 		$this->addOutput('</tr>');
+		$this->addOutput('</thead>');
+		$this->addOutput('<tbody>');
 
 		//$class = "row1";
 
@@ -864,16 +867,14 @@ class tacview
 				$this->addOutput('<td class="statisticsTable"><img class="statisticsTable" src="' . $this->image_path . 'objectIcons/' . $this->getObjectIcon($stat["Aircraft"]) . '" alt=""/></td>');
 				$this->addOutput('<td class="statisticsTable">' . $stat["Aircraft"] . '</td>');
 
-				if(array_key_exists("Group",$stat))
-				{
-					$this->addOutput('<td class="statisticsTable">' . $stat["Group"] . '</td>');
-				}
-				else
-				{
-					$this->addOutput('<td class=statisticsTable></td>');
-				}
-
-				$this->addOutput('<td class="statisticsTable">' . $this->getStat($stat, "TakeOffs") . '</td>');
+			if(array_key_exists("Group",$stat))
+			{
+				$this->addOutput('<td class="statisticsTable">' . $stat["Group"] . '</td>');
+			}
+			else
+			{
+				$this->addOutput('<td class="statisticsTable"></td>');
+			}				$this->addOutput('<td class="statisticsTable">' . $this->getStat($stat, "TakeOffs") . '</td>');
 				$this->addOutput('<td class="statisticsTable">' . $this->getStat($stat, "Lands") . '</td>');
 				$this->addOutput('<td class="statisticsTable">' . $this->getStat($stat, "Fired") . '</td>');
 				$this->addOutput('<td class="statisticsTable">' . $this->getStat($stat, "Killed", "Aircraft") . '</td>');
@@ -1216,6 +1217,7 @@ class tacview
 			}
 		}
 
+		$this->addOutput('</tbody>');
 		$this->addOutput('</table>');
 
 		// ***********************************************************
