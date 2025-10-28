@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-10-28
+#### Vercel Deployment Serving PHP Downloads
+- **RESOLVED**: Added `.vercelignore` safeguards so deployment skips uploading `public/debriefing.php` copies used for local dev.
+- **UPDATED**: Introduced Vercel redirect ensuring `/debriefing.php` requests route to the serverless `api/debriefing` handler.
+- **RESULT**: Production site now renders the debriefing view instead of prompting browser downloads.
+
 ### Changed - 2025-10-27
 #### Sticky Table Header - JavaScript Implementation
 - **IMPLEMENTED**: JavaScript-based sticky header for Aircrew Performance Summary table
