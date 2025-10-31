@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced the A-4E Skyhawk and F-104 Starfighter thumbnails with newly sourced Wikimedia Commons imagery, normalized to 640x360, and copied to both `objectIcons/` and `public/objectIcons/` bundles.
 - Confirmed manifest metadata already references the updated public-domain sources so licensing notes stay accurate for downstream tooling.
 
+### Fixed - 2025-10-31
+#### Root-Relative Icon Regression
+- Re-applied `$tv->image_path = '/'` across the local and API debriefing entry points so icon requests stay rooted at `/` even when served from `/api`.
+- Spot-checked the fix by serving `php -S localhost:8000 -t public` with the sanitized Tacview XML to confirm thumbnails display without PHP warnings.
+
 ### Fixed - 2025-10-29
 #### Aircraft Icons Missing Under `/api/debriefing`
 - **RESOLVED**: Forced Tacview renderer to use root-relative asset paths so icon requests no longer inherit the `/api` prefix in production.

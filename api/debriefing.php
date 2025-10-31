@@ -68,6 +68,7 @@ if (file_exists(__DIR__ . "/../public/tacview.php")) {
 		<?php
 
 		$tv = new tacview($config['default_language']);
+		$tv->image_path = '/'; // Ensure asset paths resolve from root when served under /api
 
 		// Adjust paths to be relative to parent directory (since we're in /api/)
 		$debriefingsPath = __DIR__ . "/../" . str_replace('debriefings/*.xml', 'debriefings', $config['debriefings_path']) . "/*.xml";

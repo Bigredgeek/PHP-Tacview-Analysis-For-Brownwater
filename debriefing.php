@@ -69,6 +69,7 @@ require_once __DIR__ . "/../" . $config['core_path'] . "/tacview.php";
 		<?php
 
 			$tv = new tacview($config['default_language']);
+			$tv->image_path = '/'; // Keep asset paths absolute for parity with API handler
 
 			// Check for XML files
 			$xmlFiles = glob($config['debriefings_path']);
