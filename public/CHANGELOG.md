@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+- Dynamically detect the correct asset base for CSS and icon bundles across `/`, `/public`, and `/api` entry points so Docker and Vercel deployments render with full styling.
+- Prefer the `/public` asset bundle when both `/core` and `/public` sprites exist so root-level requests reuse the CDN-friendly copies without sacrificing CLI fallbacks.
 - Point the public API bootstrap directly at the shared config and core Tacview engine so Vercel deployments follow the same include path as the local entry point.
 - Restore aircraft and category icons by forcing Tacview to build root-relative image paths from both debriefing entry points; verified by running `php -S localhost:8000 -t public` against the sanitized Tacview sample.
 - Prevent Vercel from serving PHP files as downloads by ignoring the local-only `public/debriefing.php` and routing `/debriefing.php` to the serverless handler.

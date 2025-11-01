@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-01
+#### Asset Path Resolution Regression
+- Added a runtime asset resolver to `debriefing.php`, `public/debriefing.php`, and `public/api/debriefing.php` so CSS and icon URLs adapt to the active document root (repo root, `public/`, or `/api`), restoring styling and imagery inside the Docker container.
+- Normalized `$tv->image_path` to the resolved asset base to eliminate 404s on category and object icons when the core bundle sits outside the served directory.
+- Reused the same resolver for the serverless handler to keep Vercel and local builds in sync.
+- Updated the resolver to prefer the deployable `public/` bundle over `core/` when both are present, keeping root-level entry points aligned with CDN-served assets while still falling back to the submodule during CLI runs.
+
 ### Removed - 2025-10-31
 - Purged the Brownwater repo's legacy copies of `tacview.php`, `tacview.css`, language packs, icon bundles, tooling, and docs so the core submodule is the single source of truth for shared assets.
 
