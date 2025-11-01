@@ -6,7 +6,7 @@ declare(strict_types=1);
 $config = require_once __DIR__ . "/config.php";
 
 // Load core tacview library
-require_once __DIR__ . "/../" . $config['core_path'] . "/tacview.php";
+require_once __DIR__ . "/" . $config['core_path'] . "/tacview.php";
 
 ?>
 <!DOCTYPE html>

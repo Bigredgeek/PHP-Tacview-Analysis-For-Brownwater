@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed - 2025-10-31
+- Purged the Brownwater repo's legacy copies of `tacview.php`, `tacview.css`, language packs, icon bundles, tooling, and docs so the core submodule is the single source of truth for shared assets.
+
+### Changed - 2025-10-31
+- Rebuilt `public/api/debriefing.php` to require the shared configuration and core engine directly, keeping the deployment shim in sync with the primary entry point.
+
 ### Added - 2025-10-31
 #### Mod Aircraft Icon Refresh
 - Replaced the A-4E Skyhawk and F-104 Starfighter thumbnails with newly sourced Wikimedia Commons imagery, normalized to 640x360, and copied to both `objectIcons/` and `public/objectIcons/` bundles.
@@ -20,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Mod Icon Fallback Cleanup
 - Removed the legacy fallbacks that mapped the A-4E Skyhawk and F-104 Starfighter to other jets now that refreshed Wikimedia thumbnails ship in both bundles.
 - Renamed the Mi-24P Hind-F asset to the lower-case `.jpg` convention shared with SOTN so Linux deployments keep picking it up.
+
+#### Building Category Icon Fallback
+- Added a `resolveCategoryIcon()` helper to guard against missing `Building_*` sprites by probing coalition-specific and neutral variants before falling back to the general car glyph.
+- Verified via the local PHP server (`php -S 127.0.0.1:8000 -t public`) that the sanitized Tacview sample no longer emits 404s for building events.
 
 #### Event Log Aircraft Name Normalization
 - Added a dedicated `normalizeAircraftObject()` helper in `core/tacview.php` and `public/tacview.php` to run `correctAircraftName()` across primary, secondary, and parent objects before stats/event processing.
