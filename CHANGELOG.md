@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Mod Icon Fallback Cleanup
 - Removed the legacy fallbacks that mapped the A-4E Skyhawk and F-104 Starfighter to other jets now that refreshed Wikimedia thumbnails ship in both bundles.
-- Confirmed the Mi-24P Hind-F asset already uses the lower-case `.jpg` naming convention shared with SOTN so Linux deployments keep picking it up.
+- Renamed the Mi-24P Hind-F asset to the lower-case `.jpg` convention shared with SOTN so Linux deployments keep picking it up.
 
 ### Fixed - 2025-10-29
 #### Aircraft Icons Missing Under `/api/debriefing`
