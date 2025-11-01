@@ -7,3 +7,5 @@
 - Sync debriefing script comments clarifying sticky header behavior.
 - Refresh mod aircraft thumbnails (A-4E Skyhawk, F-104 Starfighter) with 640x360 Wikimedia imagery so production icons stay in parity with the main bundle.
 - Stop rerouting Skyhawk and Starfighter requests to surrogate jets now that refreshed thumbnails exist; rename Hind icon to lower-case `.jpg` so Linux deployments load it.
+- Normalize aircraft objects during event processing so OV-10 Bronco entries retain their corrected name throughout the mission log instead of reverting to the DCS-exported B-1 alias.
+- Skip Tacview events lacking a `PrimaryObject` to prevent PHP notices when support objects (e.g., weapon-only records) bubble into the feed.

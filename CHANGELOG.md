@@ -21,6 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the legacy fallbacks that mapped the A-4E Skyhawk and F-104 Starfighter to other jets now that refreshed Wikimedia thumbnails ship in both bundles.
 - Renamed the Mi-24P Hind-F asset to the lower-case `.jpg` convention shared with SOTN so Linux deployments keep picking it up.
 
+#### Event Log Aircraft Name Normalization
+- Added a dedicated `normalizeAircraftObject()` helper in `core/tacview.php` and `public/tacview.php` to run `correctAircraftName()` across primary, secondary, and parent objects before stats/event processing.
+- Persisted the corrected aircraft names back onto the shared `$this->events` collection so the mission log, stats, and weapon attribution all display `OV-10A Bronco` instead of the DCS-exported `B-1 Lancer` alias.
+- Verified via the local PHP server (`php -S 127.0.0.1:8000 -t public`) that the sanitized Tacview sample renders zero `B-1 Lancer` hits while keeping all OV-10 entries intact.
+- Guarded the event loop against Tacview records missing `PrimaryObject` data to avoid PHP notices when parsing support objects that lack airframes.
+
 ### Fixed - 2025-10-29
 #### Aircraft Icons Missing Under `/api/debriefing`
 
