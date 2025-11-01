@@ -17,14 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Re-applied `$tv->image_path = '/'` across the local and API debriefing entry points so icon requests stay rooted at `/` even when served from `/api`.
 - Spot-checked the fix by serving `php -S localhost:8000 -t public` with the sanitized Tacview XML to confirm thumbnails display without PHP warnings.
 
+#### Mod Icon Fallback Cleanup
+- Removed the legacy fallbacks that mapped the A-4E Skyhawk and F-104 Starfighter to other jets now that refreshed Wikimedia thumbnails ship in both bundles.
+- Confirmed the Mi-24P Hind-F asset already uses the lower-case `.jpg` naming convention shared with SOTN so Linux deployments keep picking it up.
+
 ### Fixed - 2025-10-29
 #### Aircraft Icons Missing Under `/api/debriefing`
-- **RESOLVED**: Forced Tacview renderer to use root-relative asset paths so icon requests no longer inherit the `/api` prefix in production.
-- **UPDATED**: Aligned local and Vercel debriefing entry points to assign `$tv->image_path = '/'`, ensuring category and object icons render consistently across environments.
 
 ### Fixed - 2025-10-28
-#### Vercel Deployment Serving PHP Downloads
-- **RESOLVED**: Added `.vercelignore` safeguards so deployment skips uploading `public/debriefing.php` copies used for local dev.
 - **UPDATED**: Introduced Vercel redirect ensuring `/debriefing.php` requests route to the serverless `api/debriefing` handler.
 - **RESULT**: Production site now renders the debriefing view instead of prompting browser downloads.
 

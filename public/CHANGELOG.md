@@ -6,3 +6,4 @@
 - Mirror CSS-based sticky header implementation for public deployment assets.
 - Sync debriefing script comments clarifying sticky header behavior.
 - Refresh mod aircraft thumbnails (A-4E Skyhawk, F-104 Starfighter) with 640x360 Wikimedia imagery so production icons stay in parity with the main bundle.
+- Stop rerouting Skyhawk and Starfighter requests to surrogate jets now that refreshed thumbnails exist; Hind icon already ships in lower-case `.jpg` form for Linux parity.
