@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+- Drop sub-two-minute takeoff/landing cycles that begin and end at the same airfield without intervening actions so short sorties no longer render duplicate rows in the public mission log.
+- Surface the renamed "Airframes Lost" column label throughout the public bundle by pulling the refreshed translations from the shared core package.
 - Dynamically detect the correct asset base for CSS and icon bundles across `/`, `/public`, and `/api` entry points so Docker and Vercel deployments render with full styling.
 - Prefer the `/public` asset bundle when both `/core` and `/public` sprites exist so root-level requests reuse the CDN-friendly copies without sacrificing CLI fallbacks.
 - Point the public API bootstrap directly at the shared config and core Tacview engine so Vercel deployments follow the same include path as the local entry point.

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-03
+- Filtered out same-airport takeoff/landing pairs shorter than two minutes with no intervening activity so Franz-style short sorties no longer produce duplicate mission log rows in the Brownwater bundle.
+
+### Changed - 2025-11-03
+- Renamed the pilot statistics "Targets Destroyed" column to "Airframes Lost" and synchronized the translated strings via the shared core bundle so airframe loss totals read correctly across every locale.
+
 ### Fixed - 2025-11-01
 #### Asset Path Resolution Regression
 - Added a runtime asset resolver to `debriefing.php`, `public/debriefing.php`, and `public/api/debriefing.php` so CSS and icon URLs adapt to the active document root (repo root, `public/`, or `/api`), restoring styling and imagery inside the Docker container.
