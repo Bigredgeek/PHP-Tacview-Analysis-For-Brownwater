@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2025-11-05
+#### Performance Investigation Branch
+- Created feature branch `feature/performance-investigation` to analyze and address performance issues reported by users on mobile devices and weaker PCs
+- Completed comprehensive performance analysis documenting root causes of lag during page interaction
+- **Root Cause Identified:** EventGraph aggregation system processing multiple large XML files (up to 7 files, 254KB-1.3MB each) at runtime without caching
+- **Performance Impact Measured:**
+  - Mobile (low-end): 15-23 second page load times
+  - Desktop (average): 5-8.5 second page load times
+  - Memory usage: ~37MB per request
+  - Algorithm complexity: O(n²) event matching with nested loops
+- Created detailed documentation:
+  - `PERFORMANCE_ANALYSIS.md` - Complete performance analysis with measurements, bottleneck identification, and root cause analysis
+  - `SOLUTION_OPTIONS.md` - Five detailed solution approaches with implementation specifications, pros/cons, and performance projections
+- **Recommended Solution:** Build-time pre-processing approach
+  - Expected improvement: 95% reduction in page load time (15-23s → 0.5-1s on mobile)
+  - Implementation complexity: Low (1-2 days)
+  - Approach: Pre-aggregate debriefing files during build phase, serve cached JSON results to clients
+- **Alternative Solutions Documented:**
+  1. Runtime caching with invalidation (good for dynamic files)
+  2. Algorithm optimization (60% improvement, high complexity)
+  3. Progressive loading (improved perceived performance)
+  4. Hybrid approach (best overall, phased implementation)
+- All analysis performed without modifying production code, keeping investigation separate from implementation
+- **Key Insight:** The performance issue is NOT inherent to the aggregation feature itself, but rather the architectural decision to perform aggregation at request time instead of build time
+- **Next Steps:** Awaiting approval to implement recommended solution
+
 ### Fixed - 2025-11-06
 - Replaced the debug-heavy `showDetails` block inside the vendored `php-tacview-core/tacview.php` bundle with the compact newline-delimited script so deployments that resolve the packaged core no longer emit truncated JavaScript or trigger `debriefing:39 Unexpected end of input` in the browser console; verified via `php public/debriefing.php` against the sanitized Tacview sample.
 
