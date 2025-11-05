@@ -10,11 +10,7 @@ const https = require('node:https');
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const { pipeline } = require('node:stream');
-const { promisify } = require('node:util');
 const { createWriteStream } = fs;
-
-const pipelineAsync = promisify(pipeline);
 
 // Check if PHP is already available
 function isPhpAvailable() {
@@ -173,6 +169,16 @@ async function installPhp() {
     } catch (error) {
         console.error('✗ Failed to install PHP:', error.message);
         console.log('  Pre-processing will be skipped');
+        
+        // Clean up downloaded archive if it exists
+        if (fs.existsSync(archivePath)) {
+            try {
+                fs.unlinkSync(archivePath);
+            } catch (unlinkErr) {
+                // Ignore cleanup errors
+            }
+        }
+        
         return false;
     }
 }
