@@ -26,10 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Simplified prebuild/postbuild messages to match SOTN
   - Removed `build:debriefings` script (functionality now in main build process)
 - Added security and caching headers to `vercel.json`:
-  - Security headers: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+  - Security headers: X-Content-Type-Options, X-Frame-Options
   - API caching: 1-hour cache with revalidation for `/api/*` endpoints
   - Static asset caching: 1-year immutable cache for images, CSS, JS, fonts
   - General header pattern using proper `/:path*.:ext()` syntax for Vercel compatibility
+  - Note: X-XSS-Protection header intentionally omitted as it is deprecated in modern browsers
 - **Why This Change**: Vercel's build environment doesn't include PHP by default. This solution:
   1. Attempts to install PHP during build if on Linux (Vercel uses Linux)
   2. Uses Node.js wrappers to handle the case where PHP is unavailable

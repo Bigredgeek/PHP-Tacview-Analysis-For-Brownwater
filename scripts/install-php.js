@@ -179,8 +179,8 @@ async function installPhp() {
 
 // Main execution
 installPhp()
-    .then((success) => {
-        process.exit(success ? 0 : 0); // Always exit 0 to not fail the build
+    .then(() => {
+        process.exit(0); // Always exit 0 to not fail the build
     })
     .catch((err) => {
         console.error('Error during PHP installation:', err);
