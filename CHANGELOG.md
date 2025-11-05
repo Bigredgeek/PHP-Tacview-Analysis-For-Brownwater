@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2025-11-05
+- Ported the `EventGraph\NormalizedEvent` value object from the SOTN branch so Brownwater's aggregator can merge evidence, recompute confidence, and surface graph links with identical logic.
+- Sourced MQ-1 Predator, SA 342L Gazelle, MiG-27K Flogger-J2, and Wing Loong I icon photography from Wikimedia Commons, processed each to 640x360 via ImageMagick, and copied the thumbnails into both core and public bundles while updating manifest/tooling metadata so these airframes render without 404s.
+
+### Changed - 2025-11-05
+- Swapped both `public/debriefing.php` and `public/api/debriefing.php` over to the EventGraph aggregation pipeline, mirroring the root and API entry points so Brownwater's public bundle now produces the same merged mission timeline, metrics summary, and source report as SOTN.
+
+### Fixed - 2025-11-05
+- Restored the `EventGraph\EventEvidence` helper from SOTN, reintroducing detail-tier classification and time-shift handling so evidence ingestion no longer fatals during aggregation.
+
 ### Fixed - 2025-11-03
 - Filtered out same-airport takeoff/landing pairs shorter than two minutes with no intervening activity so Franz-style short sorties no longer produce duplicate mission log rows in the Brownwater bundle.
 - Rebased aggregated event mission clocks on the consensus mission start whenever negative offsets slip into the merged feed, keeping timeline rows aligned with the Mission Information header instead of drifting back toward the earliest outlier recording.
