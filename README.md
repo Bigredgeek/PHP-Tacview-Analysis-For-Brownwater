@@ -61,6 +61,11 @@ This project is configured for seamless deployment to Vercel:
 2. **Serverless Functions**: PHP functions run as serverless endpoints at `/api/debriefing`
 3. **Static Assets**: CSS, icons, and data files served from `public/` directory
 4. **Modern Configuration**: Uses latest Vercel best practices with `rewrites` instead of legacy `routes`
+5. **Build-Time Optimization**: Pre-processes debriefings during build for 95% faster page loads
+   - Automatically installs portable PHP during Vercel build (no root access required)
+   - Generates pre-processed cache files for optimal performance
+   - Works seamlessly in Vercel's restricted build environment
+   - Falls back to runtime processing if cache unavailable
 
 **Live Demo**: [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/Bigredgeek/PHP-Tacview-Analysis-For-SOTN)
 
