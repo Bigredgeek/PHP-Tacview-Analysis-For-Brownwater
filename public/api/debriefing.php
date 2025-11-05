@@ -7,7 +7,27 @@ $config = require_once __DIR__ . '/../config.php';
 
 // Load the shared Tacview engine from the core submodule
 require_once __DIR__ . '/../../' . $config['core_path'] . '/tacview.php';
-require_once __DIR__ . '/../../src/EventGraph/autoload.php';
+
+$eventGraphAutoloadCandidates = [
+	__DIR__ . '/../../src/EventGraph/autoload.php',
+	__DIR__ . '/../src/EventGraph/autoload.php',
+	__DIR__ . '/../../public/src/EventGraph/autoload.php',
+	__DIR__ . '/../EventGraph/autoload.php',
+];
+
+$eventGraphAutoloadPath = null;
+foreach ($eventGraphAutoloadCandidates as $candidate) {
+	if (is_file($candidate)) {
+		$eventGraphAutoloadPath = $candidate;
+		break;
+	}
+}
+
+if ($eventGraphAutoloadPath === null) {
+	throw new \RuntimeException('Unable to locate EventGraph autoloader. Checked: ' . implode(', ', $eventGraphAutoloadCandidates));
+}
+
+require_once $eventGraphAutoloadPath;
 
 use EventGraph\EventGraphAggregator;
 

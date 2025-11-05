@@ -10,7 +10,27 @@ $corePath = tacview_resolve_core_path($config['core_path'] ?? 'php-tacview-core'
 
 // Load core tacview library and event graph autoloader
 require_once $corePath . '/tacview.php';
-require_once __DIR__ . '/../src/EventGraph/autoload.php';
+
+$eventGraphAutoloadCandidates = [
+	__DIR__ . '/../src/EventGraph/autoload.php',
+	__DIR__ . '/../public/src/EventGraph/autoload.php',
+	__DIR__ . '/src/EventGraph/autoload.php',
+	__DIR__ . '/../../src/EventGraph/autoload.php',
+];
+
+$eventGraphAutoloadPath = null;
+foreach ($eventGraphAutoloadCandidates as $candidate) {
+	if (is_file($candidate)) {
+		$eventGraphAutoloadPath = $candidate;
+		break;
+	}
+}
+
+if ($eventGraphAutoloadPath === null) {
+	throw new \RuntimeException('Unable to locate EventGraph autoloader. Checked: ' . implode(', ', $eventGraphAutoloadCandidates));
+}
+
+require_once $eventGraphAutoloadPath;
 
 use EventGraph\EventGraphAggregator;
 
