@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-06
+- Replaced the debug-heavy `showDetails` block inside the vendored `php-tacview-core/tacview.php` bundle with the compact newline-delimited script so deployments that resolve the packaged core no longer emit truncated JavaScript or trigger `debriefing:39 Unexpected end of input` in the browser console; verified via `php public/debriefing.php` against the sanitized Tacview sample.
+
 ### Added - 2025-11-05
 - Ported the `EventGraph\NormalizedEvent` value object from the SOTN branch so Brownwater's aggregator can merge evidence, recompute confidence, and surface graph links with identical logic.
 - Sourced MQ-1 Predator, SA 342L Gazelle, MiG-27K Flogger-J2, and Wing Loong I icon photography from Wikimedia Commons, processed each to 640x360 via ImageMagick, and copied the thumbnails into both core and public bundles while updating manifest/tooling metadata so these airframes render without 404s.
