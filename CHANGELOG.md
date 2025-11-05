@@ -9,9 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed - 2025-11-03
 - Filtered out same-airport takeoff/landing pairs shorter than two minutes with no intervening activity so Franz-style short sorties no longer produce duplicate mission log rows in the Brownwater bundle.
+- Rebased aggregated event mission clocks on the consensus mission start whenever negative offsets slip into the merged feed, keeping timeline rows aligned with the Mission Information header instead of drifting back toward the earliest outlier recording.
 
 ### Changed - 2025-11-03
 - Renamed the pilot statistics "Targets Destroyed" column to "Airframes Lost" and synchronized the translated strings via the shared core bundle so airframe loss totals read correctly across every locale.
+
+### Added - 2025-11-02
+- Introduced the build-time core fetch helpers (`scripts/fetch-core.js` for CI and `scripts/fetch-core.php` for local CLI) so deployments automatically clone `php-tacview-core` when the shared bundle is missing.
 
 ### Fixed - 2025-11-01
 #### Asset Path Resolution Regression
