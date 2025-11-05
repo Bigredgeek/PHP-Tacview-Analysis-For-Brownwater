@@ -19,5 +19,5 @@ return [
     
     // Paths (relative to project root)
     'debriefings_path' => 'debriefings/*.xml',
-    'core_path' => 'core',  // Path to the submodule
+    'core_path' => 'php-tacview-core',  // Path to the fetched shared core bundle
 ];

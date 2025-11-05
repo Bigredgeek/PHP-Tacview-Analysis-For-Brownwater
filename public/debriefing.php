@@ -3,10 +3,16 @@
 declare(strict_types=1);
 
 // Load configuration
-$config = require_once __DIR__ . "/config.php";
+$config = require_once __DIR__ . '/config.php';
 
-// Load core tacview library
-require_once __DIR__ . "/../" . $config['core_path'] . "/tacview.php";
+require_once __DIR__ . '/../src/core_path.php';
+$corePath = tacview_resolve_core_path($config['core_path'] ?? 'php-tacview-core', dirname(__DIR__));
+
+// Load core tacview library and event graph autoloader
+require_once $corePath . '/tacview.php';
+require_once __DIR__ . '/../src/EventGraph/autoload.php';
+
+use EventGraph\EventGraphAggregator;
 
 if (!function_exists('tacview_normalize_url_path')) {
 	function tacview_normalize_url_path(?string $path): string

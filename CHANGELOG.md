@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed - 2025-11-04
 - Dropped the embedded `core/` git submodule in favor of the fetch scripts so Brownwater mirrors the SOTN workflow and pins the shared engine explicitly during builds.
 
+### Fixed - 2025-11-04
+- Patched every debriefing entry point to resolve the shared Tacview core via the new helper so local PHP servers find the freshly fetched `php-tacview-core` bundle instead of fatally missing `core/tacview.php`.
+
 ### Added - 2025-11-02
 - Introduced the build-time core fetch helpers (`scripts/fetch-core.js` for CI and `scripts/fetch-core.php` for local CLI) so deployments automatically clone `php-tacview-core` when the shared bundle is missing.
 
