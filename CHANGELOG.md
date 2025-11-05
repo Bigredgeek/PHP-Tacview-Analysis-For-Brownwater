@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed - 2025-11-03
 - Renamed the pilot statistics "Targets Destroyed" column to "Airframes Lost" and synchronized the translated strings via the shared core bundle so airframe loss totals read correctly across every locale.
 
+### Removed - 2025-11-04
+- Dropped the embedded `core/` git submodule in favor of the fetch scripts so Brownwater mirrors the SOTN workflow and pins the shared engine explicitly during builds.
+
 ### Added - 2025-11-02
 - Introduced the build-time core fetch helpers (`scripts/fetch-core.js` for CI and `scripts/fetch-core.php` for local CLI) so deployments automatically clone `php-tacview-core` when the shared bundle is missing.
 
