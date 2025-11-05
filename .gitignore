@@ -24,6 +24,10 @@ dist/
 build/
 !public/
 
+# Pre-processed cache files (regenerated during build)
+public/debriefings/aggregated-cache.json
+public/debriefings/cache-meta.json
+
 # Shared core assets live in submodule
 tacview.php
 tacview.css
