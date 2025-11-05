@@ -244,12 +244,78 @@ $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/debriefing.php';
 			$tv = new tacview($config['default_language']);
 			$tv->image_path = $assetBaseUrl;
 
+			// Check for pre-aggregated cache
+			$cacheFile = __DIR__ . '/public/debriefings/aggregated-cache.json';
+			$useCachedData = is_file($cacheFile);
+
 			$debriefingsGlob = __DIR__ . '/' . ltrim($config['debriefings_path'], '/');
 			$xmlFiles = glob($debriefingsGlob) ?: [];
 
 			$statusMessages = "<div style='margin-top: 40px; padding: 20px; border-top: 1px solid #333;'>";
-			$statusMessages .= "<p>Looking for XML files in debriefings folder...</p>";
-			$statusMessages .= "<p>Found " . count($xmlFiles) . " XML files.</p>";
+
+			if ($useCachedData) {
+				echo "<div style='position: fixed; top: 10px; right: 10px; background: rgba(0, 255, 0, 0.1); border: 1px solid #0f0; padding: 8px 12px; border-radius: 4px; font-size: 12px; z-index: 9999;'>";
+				echo "⚡ Fast Mode (Pre-Processed)";
+				echo "</div>";
+				
+				$cache = json_decode(file_get_contents($cacheFile), true);
+				
+				if ($cache && isset($cache['mission'])) {
+					$tv->proceedAggregatedStats(
+						$cache['mission']['name'],
+						$cache['mission']['startTime'],
+						$cache['mission']['duration'],
+						$cache['mission']['events']
+					);
+					echo $tv->getOutput();
+					
+					// Display cache info
+					$statusMessages .= "<h2>📦 Cached Aggregation (Generated: " . date('Y-m-d H:i:s', $cache['generated']) . ")</h2>";
+					$statusMessages .= "<p>✅ Loaded pre-processed data from cache</p>";
+					$statusMessages .= "<p>📁 File count: " . $cache['fileCount'] . "</p>";
+					
+					$metrics = $cache['metrics'] ?? [];
+					$statusMessages .= "<h3>Aggregation Metrics</h3>";
+					$statusMessages .= "<ul>";
+					$statusMessages .= "<li>Total raw events: " . (int)($metrics['raw_event_count'] ?? 0) . "</li>";
+					$statusMessages .= "<li>Merged events: " . (int)($metrics['merged_events'] ?? 0) . "</li>";
+					$statusMessages .= "<li>Duplicates suppressed: " . (int)($metrics['duplicates_suppressed'] ?? 0) . "</li>";
+					$statusMessages .= "<li>Inferred links: " . (int)($metrics['inferred_links'] ?? 0) . "</li>";
+					$statusMessages .= "</ul>";
+					
+					$sources = $cache['mission']['sources'] ?? [];
+					if (!empty($sources)) {
+						$statusMessages .= "<h3>Source Recordings</h3><ul>";
+						foreach ($sources as $source) {
+							$label = htmlspecialchars($source['filename'] ?? $source['id'] ?? 'unknown');
+							$eventsCount = (int)($source['events'] ?? 0);
+							$offsetSeconds = isset($source['offset']) && is_numeric($source['offset']) ? (float)$source['offset'] : 0.0;
+							$offsetLabel = sprintf('%+.2fs', $offsetSeconds);
+							$offsetHtml = htmlspecialchars($offsetLabel, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+							$strategy = $source['offsetStrategy'] ?? null;
+							$strategyLabel = '';
+							if ($strategy === 'anchor') {
+								$strategyLabel = ' via anchor match';
+							} elseif ($strategy === 'fallback-applied') {
+								$strategyLabel = ' via fallback';
+							} elseif ($strategy === 'fallback-skipped') {
+								$strategyLabel = ' (fallback skipped)';
+							}
+							$baselineMarker = !empty($source['baseline']) ? ' <strong>(baseline)</strong>' : '';
+							$statusMessages .= "<li>{$label}{$baselineMarker} ({$eventsCount} events, offset {$offsetHtml}{$strategyLabel})</li>";
+						}
+						$statusMessages .= "</ul>";
+					}
+				} else {
+					echo "<p style='color: red;'>⚠️ Cache file corrupted, falling back to runtime processing</p>";
+					$useCachedData = false;
+				}
+			}
+
+			// Fallback to runtime processing if cache not available
+			if (!$useCachedData) {
+				$statusMessages .= "<p>Looking for XML files in debriefings folder...</p>";
+				$statusMessages .= "<p>Found " . count($xmlFiles) . " XML files.</p>";
 
 			if ($xmlFiles === []) {
 				$statusMessages .= "<p>No XML files found. Looking for other files...</p>";
@@ -314,6 +380,7 @@ $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/debriefing.php';
 					}
 					$statusMessages .= "</ul>";
 				}
+			}
 			}
 
 			$statusMessages .= "</div>";
