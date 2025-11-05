@@ -3,9 +3,6 @@
 declare(strict_types=1);
 
 // Load configuration
-			// Check for XML files
-			$xmlFiles = glob($config['debriefings_path']);
-			
 $config = require_once __DIR__ . '/config.php';
 
 require_once __DIR__ . '/src/core_path.php';
@@ -212,36 +209,21 @@ $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/debriefing.php';
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<script type="text/javascript">
 		function showDetails(zoneAffiche, rowElement){
-			console.log("showDetails called with ID:", zoneAffiche);
 			var detailRow = document.getElementById(zoneAffiche);
-			console.log("detailRow found:", detailRow);
-			var pilotRow = rowElement || event.currentTarget;
-			
 			if(!detailRow){
-				console.error("Detail row not found for ID:", zoneAffiche);
 				return false;
 			}
-			
-			// Get computed style to check actual visibility
-			var computedDisplay = window.getComputedStyle(detailRow).display;
-			console.log("Computed display:", computedDisplay);
-			var isHidden = computedDisplay === "none";
-			console.log("isHidden:", isHidden);
-			
+			var pilotRow = rowElement || (typeof event !== "undefined" ? event.currentTarget : null);
+			if(!pilotRow){
+				return false;
+			}
+			var isHidden = window.getComputedStyle(detailRow).display === "none";
+			document.querySelectorAll("tr.hiddenRow").forEach(function(row){ row.style.display="none"; });
+			document.querySelectorAll("tr.statisticsTable").forEach(function(row){ row.classList.remove("active-pilot"); });
 			if(isHidden){
-				console.log("Showing detail row");
-				// Hide all other detail rows first (only target TR elements, not TD)
-				var allDetails = document.querySelectorAll("tr.hiddenRow");
-				var allPilotRows = document.querySelectorAll("tr.statisticsTable");
-				allDetails.forEach(function(row){ row.style.display="none"; });
-				allPilotRows.forEach(function(row){ row.classList.remove("active-pilot"); });
-				
-				// Show this detail row
 				detailRow.style.display="table-row";
 				pilotRow.classList.add("active-pilot");
 			}else{
-				console.log("Hiding detail row");
-				// Hide this detail row
 				detailRow.style.display="none";
 				pilotRow.classList.remove("active-pilot");
 			}
@@ -262,7 +244,8 @@ $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/debriefing.php';
 			$tv = new tacview($config['default_language']);
 			$tv->image_path = $assetBaseUrl;
 
-			$xmlFiles = glob($config['debriefings_path']) ?: [];
+			$debriefingsGlob = __DIR__ . '/' . ltrim($config['debriefings_path'], '/');
+			$xmlFiles = glob($debriefingsGlob) ?: [];
 
 			$statusMessages = "<div style='margin-top: 40px; padding: 20px; border-top: 1px solid #333;'>";
 			$statusMessages .= "<p>Looking for XML files in debriefings folder...</p>";
@@ -270,13 +253,13 @@ $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/debriefing.php';
 
 			if ($xmlFiles === []) {
 				$statusMessages .= "<p>No XML files found. Looking for other files...</p>";
-				$allFiles = glob('debriefings/*') ?: [];
+				$allFiles = glob(__DIR__ . '/debriefings/*') ?: [];
 				$statusMessages .= "<ul>";
 				foreach ($allFiles as $file) {
 					$statusMessages .= "<li>" . htmlspecialchars(basename($file)) . "</li>";
 				}
 				$statusMessages .= "</ul>";
-				$statusMessages .= "<p><strong>Note:</strong> This application currently processes XML files only. You have an .acmi file which needs to be converted to XML format.</p>";
+				$statusMessages .= "<p><strong>Note:</strong> This application currently processes XML files only. You may have an .acmi file which needs to be converted to XML format.</p>";
 			} else {
 				$aggregatorOptions = $config['aggregator'] ?? [];
 				$aggregator = new EventGraphAggregator($config['default_language'], $aggregatorOptions);

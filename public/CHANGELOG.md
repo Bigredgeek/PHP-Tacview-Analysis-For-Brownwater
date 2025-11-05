@@ -11,6 +11,7 @@
 - Replace the public debriefing and serverless API scripts with the EventGraph aggregation flow so the production bundle emits the merged mission timeline, metrics, and source diagnostics shipped in the SOTN branch.
 - Bundle the EventGraph PHP sources beneath `public/src` and teach every entry point to fall back to that mirror so Vercel deployments can actually execute the aggregator.
 - Restore the SOTN `EventGraph\EventEvidence` helper so aggregation in the public bundle can classify detail tiers and avoid fatal errors while ingesting source recordings.
+- Revert the expanded debug-heavy `showDetails` script to the stable compact version so Vercel deployments no longer truncate the inline JavaScript and throw `Unexpected end of input` at runtime.
 - Prevent Vercel from serving PHP files as downloads by ignoring the local-only `public/debriefing.php` and routing `/debriefing.php` to the serverless handler.
 - Mirror CSS-based sticky header implementation for public deployment assets.
 - Sync debriefing script comments clarifying sticky header behavior.

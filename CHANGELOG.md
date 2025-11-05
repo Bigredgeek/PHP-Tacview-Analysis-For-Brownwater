@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed - 2025-11-05
 - Restored the `EventGraph\EventEvidence` helper from SOTN, reintroducing detail-tier classification and time-shift handling so evidence ingestion no longer fatals during aggregation.
+- Reverted the inlined `showDetails` JavaScript back to the compact SOTN version across core and entry points, preventing Vercel from choking on the debug logging variant that truncated the script block and triggered `Unexpected end of input` in production.
 
 ### Fixed - 2025-11-03
 - Filtered out same-airport takeoff/landing pairs shorter than two minutes with no intervening activity so Franz-style short sorties no longer produce duplicate mission log rows in the Brownwater bundle.
