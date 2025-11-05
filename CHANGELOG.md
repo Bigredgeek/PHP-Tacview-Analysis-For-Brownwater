@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-05
+#### Vercel Build Pre-caching PHP Installation
+- **FIXED**: PHP installation failing during Vercel build process with HTTP 404 error
+- **Root Cause**: Invalid download URL for static PHP binary (`dl.static-php.dev` domain not resolving)
+- **Solution**: Updated `scripts/install-php.js` to use working Swoole build-static-php releases from GitHub
+  - Changed download source from `https://dl.static-php.dev/static-php-cli/common/php-8.2-cli-linux-{arch}.tar.gz` 
+  - New URL: `https://github.com/swoole/build-static-php/releases/download/v1.10.0/php-cli-v8.2.28-linux-{arch}.tar.xz`
+  - Updated PHP version to 8.2.28 (from generic 8.2)
+  - Changed tar extraction flags from `-xzf` (gzip) to `-xJf` (xz compression)
+  - Enhanced binary location detection to support swoole's `bin/runtime/php` structure
+- **Impact**: Vercel builds now successfully install PHP during build time, enabling debriefing pre-processing and cache generation
+- **Tested**: Verified PHP 8.2.28 installation with all required XML extensions (dom, libxml, xml, xmlreader, xmlwriter, simplexml)
+- **Why This Matters**: Pre-processing debriefing files at build time reduces page load from 8+ seconds to <1 second for end users
+
 ### Added - 2025-11-05
 #### Vercel Deployment Compatibility - Ported from SOTN
 - **PORTED from PHP-Tacview-Analysis-For-SOTN**: Build-time PHP installation and optional pre-processing for Vercel deployments
