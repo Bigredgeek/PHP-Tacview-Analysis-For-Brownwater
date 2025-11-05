@@ -90,39 +90,81 @@ use EventGraph\EventGraphAggregator;
 		<?php
 
 		$tv = new tacview($config['default_language']);
-		$tv->image_path = '/'; // Ensure asset paths resolve from root when served under /api
+		$tv->image_path = '/';
 
-		// Adjust paths to be relative to parent directory (since we're in /api/)
-		$debriefingsPath = __DIR__ . "/../" . str_replace('debriefings/*.xml', 'debriefings', $config['debriefings_path']) . "/*.xml";
+		$debriefingsGlob = __DIR__ . '/../' . ltrim($config['debriefings_path'], '/');
+		$xmlFiles = glob($debriefingsGlob) ?: [];
 
-		// Check for XML files
-		$xmlFiles = glob($debriefingsPath);
-
-		// Store status messages to display at the bottom
 		$statusMessages = "<div style='margin-top: 40px; padding: 20px; border-top: 1px solid #333;'>";
 		$statusMessages .= "<p>Looking for XML files in debriefings folder...</p>";
 		$statusMessages .= "<p>Found " . count($xmlFiles) . " XML files.</p>";
 
-		if (count($xmlFiles) == 0) {
+		if ($xmlFiles === []) {
 		    $statusMessages .= "<p>No XML files found. Looking for other files...</p>";
-		    $allFiles = glob(dirname($debriefingsPath) . "/*");
+		    $allFiles = glob(__DIR__ . '/../debriefings/*') ?: [];
 		    $statusMessages .= "<ul>";
 		    foreach ($allFiles as $file) {
-		        $statusMessages .= "<li>" . basename($file) . "</li>";
+		        $statusMessages .= "<li>" . htmlspecialchars(basename($file)) . "</li>";
 		    }
 		    $statusMessages .= "</ul>";
 		    $statusMessages .= "<p><strong>Note:</strong> This application currently processes XML files only. You may have an .acmi file which needs to be converted to XML format.</p>";
-		}
+		} else {
+		    $aggregatorOptions = $config['aggregator'] ?? [];
+		    $aggregator = new EventGraphAggregator($config['default_language'], $aggregatorOptions);
 
-		foreach ($xmlFiles as $filexml) {
-		    $statusMessages .= "<h2>Processed: " . basename($filexml) . "</h2>";
-		    $tv->proceedStats("$filexml","Mission Test");
+		    foreach ($xmlFiles as $filexml) {
+		        $statusMessages .= "<p>Aggregating " . htmlspecialchars(basename($filexml)) . "...</p>";
+		        try {
+		            $aggregator->ingestFile($filexml);
+		        } catch (\Throwable $exception) {
+		            $statusMessages .= "<p style='color: #ff6b6b;'>Failed to ingest " . htmlspecialchars(basename($filexml)) . ': ' . htmlspecialchars($exception->getMessage()) . "</p>";
+		        }
+		    }
+
+		    $mission = $aggregator->toAggregatedMission();
+		    $tv->proceedAggregatedStats(
+		        $mission->getMissionName(),
+		        $mission->getStartTime(),
+		        $mission->getDuration(),
+		        $mission->getEvents()
+		    );
 		    echo $tv->getOutput();
+
+		    $metrics = $aggregator->getMetrics();
+		    $statusMessages .= "<h2>Aggregation Summary</h2>";
+		    $statusMessages .= "<ul>";
+		    $statusMessages .= "<li>Total raw events: " . (int)($metrics['raw_event_count'] ?? 0) . "</li>";
+		    $statusMessages .= "<li>Merged events: " . (int)($metrics['merged_events'] ?? 0) . "</li>";
+		    $statusMessages .= "<li>Duplicates suppressed: " . (int)($metrics['duplicates_suppressed'] ?? 0) . "</li>";
+		    $statusMessages .= "<li>Inferred links: " . (int)($metrics['inferred_links'] ?? 0) . "</li>";
+		    $statusMessages .= "</ul>";
+
+		    $sources = $mission->getSources();
+		    if ($sources !== []) {
+		        $statusMessages .= "<h3>Source Recordings</h3><ul>";
+		        foreach ($sources as $source) {
+		            $label = htmlspecialchars($source['filename'] ?? $source['id'] ?? 'unknown');
+		            $eventsCount = (int)($source['events'] ?? 0);
+		            $offsetSeconds = isset($source['offset']) && is_numeric($source['offset']) ? (float)$source['offset'] : 0.0;
+		            $offsetLabel = sprintf('%+.2fs', $offsetSeconds);
+		            $offsetHtml = htmlspecialchars($offsetLabel, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+		            $strategy = $source['offsetStrategy'] ?? null;
+		            $strategyLabel = '';
+		            if ($strategy === 'anchor') {
+		                $strategyLabel = ' via anchor match';
+		            } elseif ($strategy === 'fallback-applied') {
+		                $strategyLabel = ' via fallback';
+		            } elseif ($strategy === 'fallback-skipped') {
+		                $strategyLabel = ' (fallback skipped)';
+		            }
+		            $baselineMarker = !empty($source['baseline']) ? ' <strong>(baseline)</strong>' : '';
+		            $statusMessages .= "<li>{$label}{$baselineMarker} ({$eventsCount} events, offset {$offsetHtml}{$strategyLabel})</li>";
+		        }
+		        $statusMessages .= "</ul>";
+		    }
 		}
 
 		$statusMessages .= "</div>";
-
-		// Output status messages at the bottom
 		echo $statusMessages;
 		?>
 	</body>

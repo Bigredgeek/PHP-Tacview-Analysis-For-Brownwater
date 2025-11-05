@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ported the `EventGraph\NormalizedEvent` value object from the SOTN branch so Brownwater's aggregator can merge evidence, recompute confidence, and surface graph links with identical logic.
 - Sourced MQ-1 Predator, SA 342L Gazelle, MiG-27K Flogger-J2, and Wing Loong I icon photography from Wikimedia Commons, processed each to 640x360 via ImageMagick, and copied the thumbnails into both core and public bundles while updating manifest/tooling metadata so these airframes render without 404s.
 - Mirrored the EventGraph source tree into `public/src` and added resilient autoloader discovery so Vercel bundles can execute the aggregator without missing includes.
+- Replaced the root serverless `api/debriefing.php` handler with the EventGraph aggregation pipeline so Vercel traffic renders the merged mission timeline and metrics instead of sequential per-file stats.
 
 ### Changed - 2025-11-05
 - Swapped both `public/debriefing.php` and `public/api/debriefing.php` over to the EventGraph aggregation pipeline, mirroring the root and API entry points so Brownwater's public bundle now produces the same merged mission timeline, metrics summary, and source report as SOTN.
