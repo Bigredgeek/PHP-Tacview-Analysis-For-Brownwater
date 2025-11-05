@@ -8,6 +8,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added - 2025-11-05
+#### Vercel Deployment Compatibility - Ported from SOTN
+- **PORTED from PHP-Tacview-Analysis-For-SOTN**: Build-time PHP installation and optional pre-processing for Vercel deployments
+- Created `scripts/install-php.js` to automatically download and install static PHP binary during Vercel build:
+  - Downloads portable PHP 8.2 binary from static-php-cli project for Linux x86_64/aarch64
+  - Gracefully skips installation on non-Linux platforms (Windows/macOS)
+  - Always exits successfully to avoid failing the build if PHP installation fails
+  - Detects if system PHP is already available and skips download
+  - Installs to `~/.php-static` directory without requiring root access
+- Created `scripts/preprocess-debriefings.js` as Node.js wrapper for PHP preprocessing:
+  - Checks for PHP availability (system PHP or custom-installed from install-php.js)
+  - Runs `preprocess-debriefings.php` if PHP is available
+  - Gracefully skips preprocessing if PHP is not found, allowing runtime processing fallback
+  - Provides informative messages about PHP status and preprocessing results
+- Updated `package.json` build scripts to use Node.js wrappers:
+  - Changed build command from direct `php scripts/preprocess-debriefings.php` to `node scripts/install-php.js && node scripts/preprocess-debriefings.js`
+  - Simplified prebuild/postbuild messages to match SOTN
+  - Removed `build:debriefings` script (functionality now in main build process)
+- Added security and caching headers to `vercel.json`:
+  - Security headers: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection
+  - API caching: 1-hour cache with revalidation for `/api/*` endpoints
+  - Static asset caching: 1-year immutable cache for images, CSS, JS, fonts
+  - General header pattern using proper `/:path*.:ext()` syntax for Vercel compatibility
+- **Why This Change**: Vercel's build environment doesn't include PHP by default. This solution:
+  1. Attempts to install PHP during build if on Linux (Vercel uses Linux)
+  2. Uses Node.js wrappers to handle the case where PHP is unavailable
+  3. Allows the application to work with both pre-processed cache (when PHP available) and runtime processing (when not)
+  4. Mirrors the successful implementation from SOTN that enables Vercel deployments
+- **Testing Requirements**:
+  - Build process must work on systems with and without PHP
+  - Pre-processing should run when PHP is available
+  - Application should fall back to runtime processing when cache unavailable
+  - Vercel deployments should succeed even if PHP installation fails
+
+### Added - 2025-11-05
 #### Solution 1 Implementation: Build-Time Pre-Processing ✅
 - **IMPLEMENTED Solution 1 from Performance Analysis** - Build-time pre-processing for EventGraph aggregation
 - Created `scripts/preprocess-debriefings.php` to aggregate all Tacview XML files during build time:
