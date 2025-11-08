@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-08
+- Added a cross-device safe move in `scripts/fetch-core.php` so the build falls back to a recursive copy when `rename()` cannot move the extracted `php-tacview-core` bundle, restoring Vercel and CI deployments that unpack archives on separate volumes.
+
 ### Fixed - 2025-11-05
 #### Vercel Build Pre-caching PHP Installation
 - **FIXED**: PHP installation failing during Vercel build process with HTTP 404 error

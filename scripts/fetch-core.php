@@ -2,6 +2,76 @@
 
 declare(strict_types=1);
 
+/**
+ * Recursively copy a directory tree from $source to $destination.
+ */
+function recursiveCopy(string $source, string $destination): bool
+{
+    if (!is_dir($source)) {
+        return false;
+    }
+
+    if (!is_dir($destination) && !mkdir($destination, 0755, true) && !is_dir($destination)) {
+        return false;
+    }
+
+    $entries = scandir($source);
+    if ($entries === false) {
+        return false;
+    }
+
+    foreach ($entries as $entry) {
+        if ($entry === '.' || $entry === '..') {
+            continue;
+        }
+
+        $sourcePath = $source . DIRECTORY_SEPARATOR . $entry;
+        $destinationPath = $destination . DIRECTORY_SEPARATOR . $entry;
+
+        if (is_dir($sourcePath)) {
+            if (!recursiveCopy($sourcePath, $destinationPath)) {
+                return false;
+            }
+        } else {
+            if (!copy($sourcePath, $destinationPath)) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
+ * Recursively remove a directory tree if it exists.
+ */
+function removeDirectory(string $dir): void
+{
+    if (!is_dir($dir)) {
+        return;
+    }
+
+    $entries = scandir($dir);
+    if ($entries === false) {
+        return;
+    }
+
+    foreach ($entries as $entry) {
+        if ($entry === '.' || $entry === '..') {
+            continue;
+        }
+
+        $path = $dir . DIRECTORY_SEPARATOR . $entry;
+        if (is_dir($path)) {
+            removeDirectory($path);
+        } else {
+            @unlink($path);
+        }
+    }
+
+    @rmdir($dir);
+}
+
 // Simple bootstrap helper to ensure the shared Tacview core exists during builds.
 
 $root = dirname(__DIR__);
@@ -94,35 +164,24 @@ if (!is_dir($extractedRoot)) {
     return 1;
 }
 
-if (!rename($extractedRoot, $targetDir)) {
-    fwrite(STDERR, "Failed to move extracted core into place at {$targetDir}." . PHP_EOL);
-    return 1;
+$renameSucceeded = @rename($extractedRoot, $targetDir);
+if (!$renameSucceeded) {
+    $renameError = error_get_last();
+    $errorDetail = $renameError['message'] ?? 'unknown error';
+    fwrite(STDOUT, "Rename from {$extractedRoot} to {$targetDir} failed ({$errorDetail}). Attempting recursive copy..." . PHP_EOL);
+
+    if (!recursiveCopy($extractedRoot, $targetDir)) {
+        fwrite(STDERR, "Failed to copy extracted core into place at {$targetDir}." . PHP_EOL);
+        removeDirectory($targetDir);
+        removeDirectory($extractDirectory);
+        @unlink($zipPath);
+        return 1;
+    }
 }
 
 @unlink($zipPath);
 
-$removeDir = static function (string $dir) use (&$removeDir): void {
-    if (!is_dir($dir)) {
-        return;
-    }
-
-    foreach (scandir($dir) ?: [] as $entry) {
-        if ($entry === '.' || $entry === '..') {
-            continue;
-        }
-
-        $path = $dir . DIRECTORY_SEPARATOR . $entry;
-        if (is_dir($path)) {
-            $removeDir($path);
-        } else {
-            @unlink($path);
-        }
-    }
-
-    @rmdir($dir);
-};
-
-$removeDir($extractDirectory);
+removeDirectory($extractDirectory);
 
 fwrite(STDOUT, "php-tacview-core installed to {$targetDir}." . PHP_EOL);
 
