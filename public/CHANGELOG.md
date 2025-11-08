@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Clarify mission-time normalization in bundled `EventGraphAggregator.php` with explicit empty-array guards and explanatory comments about negative MissionTime header scenarios, enabling better understanding of timeline alignment strategies.
 - Ship the compact newline-delimited `showDetails` helper inside the vendored `php-tacview-core` bundle so production builds that lean on the packaged core no longer truncate the inline JavaScript and throw `debriefing:39 Unexpected end of input`.
 - Publish MQ-1 Predator, SA 342L Gazelle, MiG-27K Flogger-J2, and Wing Loong I thumbnails normalized with ImageMagick so production stops 404ing those airframes.
 - Drop sub-two-minute takeoff/landing cycles that begin and end at the same airfield without intervening actions so short sorties no longer render duplicate rows in the public mission log.
