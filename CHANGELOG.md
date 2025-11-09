@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-08
+- Added a cross-device safe move in `scripts/fetch-core.php` so the build falls back to a recursive copy when `rename()` cannot move the extracted `php-tacview-core` bundle, restoring Vercel and CI deployments that unpack archives on separate volumes.
+- Improved error diagnostics in `scripts/fetch-core.php` by removing error suppression (`@`) and capturing detailed failure messages via `error_get_last()`, enabling clearer troubleshooting of download and file system failures.
+- Added SSL/TLS peer verification to stream context in `scripts/fetch-core.php` for safer supply-chain integrity when downloading the core bundle.
+- Added pre-flight git dependency check in `scripts/fetch-core.js` with platform-specific installation guidance (macOS, Ubuntu, Windows, Fedora).
+- Clarified mission-time normalization in `EventGraphAggregator.php` (both `src/` and `public/src/` copies):
+  - Added explicit empty-array guard in `getMinimumEventMissionTime()` to prevent silent logic errors.
+  - Enhanced `applyStartTimeConsensus()` with explanatory comments about negative MissionTime header scenarios and timeline normalization strategy.
+  - This fix addresses edge cases where Tacview exports have misaligned or negative mission times across combined recordings.
+
 ### Fixed - 2025-11-05
 #### Vercel Build Pre-caching PHP Installation
 - **FIXED**: PHP installation failing during Vercel build process with HTTP 404 error
