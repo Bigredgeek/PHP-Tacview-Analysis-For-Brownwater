@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed - 2025-11-08
+- Fixed pre-caching logic in `scripts/preprocess-debriefings.php`: Removed smart cache invalidation that was skipping rebuilds when source files were unchanged. The script now **always rebuilds and overwrites the cache** on every execution, ensuring fresh data is used even when debriefing files are replaced or aggregator logic changes. This addresses the issue where stale cached data persisted despite source file updates.
 - Fixed logo spacing: added `margin-top: 40px` to `.header-container` CSS rule for consistent visual breathing room at the top of the page, ensuring logo has proper spacing from viewport edge.
 - Added a cross-device safe move in `scripts/fetch-core.php` so the build falls back to a recursive copy when `rename()` cannot move the extracted `php-tacview-core` bundle, restoring Vercel and CI deployments that unpack archives on separate volumes.
 - Improved error diagnostics in `scripts/fetch-core.php` by removing error suppression (`@`) and capturing detailed failure messages via `error_get_last()`, enabling clearer troubleshooting of download and file system failures.

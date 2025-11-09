@@ -77,21 +77,7 @@ foreach ($xmlFiles as $file) {
 
 echo "📊 Total data size: " . number_format($totalSize / 1024 / 1024, 2) . " MB\n";
 
-// Check if cache is valid
-$rebuildNeeded = true;
-if (is_file($metaFile)) {
-	$cachedMeta = json_decode(file_get_contents($metaFile), true);
-	if ($cachedMeta && isset($cachedMeta['fileHashes']) && $cachedMeta['fileHashes'] === $fileHashes) {
-		echo "✅ Cache is up-to-date (files unchanged)\n";
-		$rebuildNeeded = false;
-	}
-}
-
-if (!$rebuildNeeded && is_file($cacheFile)) {
-	echo "⏭️  Skipping rebuild - using existing cache\n";
-	exit(0);
-}
-
+// Always rebuild cache to ensure fresh data
 echo "⚙️  Processing debriefings...\n";
 $startTime = microtime(true);
 
