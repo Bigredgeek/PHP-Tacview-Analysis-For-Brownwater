@@ -58,6 +58,11 @@ final class EventGraphAggregator
         'hasbeenshotdown',
         'hascrashed',
     ];
+    private const WEAPON_INSTANCE_TYPES = [
+        'hasbeenhitby',
+        'hasbeendestroyed',
+        'hasbeenshotdown',
+    ];
 
     private readonly string $language;
     private readonly float $timeTolerance;
@@ -398,6 +403,10 @@ final class EventGraphAggregator
 
     private function areEventsEquivalent(NormalizedEvent $left, NormalizedEvent $right): bool
     {
+        if ($this->isSameWeaponInstance($left, $right)) {
+            return true;
+        }
+
         $tolerance = max(
             $this->timeToleranceForEvent($left),
             $this->timeToleranceForEvent($right)
@@ -416,6 +425,33 @@ final class EventGraphAggregator
         }
 
         return true;
+    }
+
+    private function isSameWeaponInstance(NormalizedEvent $left, NormalizedEvent $right): bool
+    {
+        $type = strtolower($left->getType());
+        if (!in_array($type, self::WEAPON_INSTANCE_TYPES, true)) {
+            return false;
+        }
+
+        $leftKey = $this->weaponInstanceKey($left->getSecondary());
+        if ($leftKey === null) {
+            return false;
+        }
+
+        $rightKey = $this->weaponInstanceKey($right->getSecondary());
+        if ($rightKey === null || $leftKey !== $rightKey) {
+            return false;
+        }
+
+        if (!$this->objectsComparable($left->getParent(), $right->getParent())) {
+            return false;
+        }
+
+        $delta = abs($left->getMissionTime() - $right->getMissionTime());
+        $window = max(6.0, min(180.0, $this->resolveWeaponWindow($left->getSecondary())));
+
+        return $delta <= $window;
     }
 
     private function objectsComparable(?array $a, ?array $b): bool
@@ -1369,20 +1405,47 @@ final class EventGraphAggregator
             return null;
         }
 
-        $name = strtolower(trim((string)($weapon['Name'] ?? '')));
-        $type = strtolower(trim((string)($weapon['Type'] ?? '')));
         $id = strtolower(trim((string)($weapon['ID'] ?? '')));
+        if ($id !== '') {
+            return 'id:' . $id;
+        }
 
+        $parent = strtolower(trim((string)($weapon['Parent'] ?? '')));
+        if ($parent !== '') {
+            return 'parent:' . $parent;
+        }
+
+        $serial = strtolower(trim((string)($weapon['Serial'] ?? $weapon['SerialNumber'] ?? '')));
+        $name = strtolower(trim((string)($weapon['Name'] ?? '')));
         if ($name !== '') {
-            return $name;
+            if ($serial !== '') {
+                return $name . '#' . $serial;
+            }
+            return 'name:' . $name;
         }
 
+        $type = strtolower(trim((string)($weapon['Type'] ?? '')));
         if ($type !== '') {
-            return $type;
+            return 'type:' . $type;
         }
 
+        return null;
+    }
+
+    private function weaponInstanceKey(?array $weapon): ?string
+    {
+        if ($weapon === null) {
+            return null;
+        }
+
+        $id = strtolower(trim((string)($weapon['ID'] ?? '')));
         if ($id !== '') {
             return $id;
+        }
+
+        $parent = strtolower(trim((string)($weapon['Parent'] ?? '')));
+        if ($parent !== '') {
+            return 'parent:' . $parent;
         }
 
         return null;

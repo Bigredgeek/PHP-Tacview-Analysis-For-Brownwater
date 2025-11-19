@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed - 2025-11-20
+- Hardened the EventGraph aggregation dedupe logic so identical missiles recorded in multiple Tacview tracks no longer inflate hit counts. `areEventsEquivalent()` now short-circuits when the same weapon instance (matching missile ID/parent and shooter) reappears, even if the recordings disagree on timestamps, and `weaponKey()` prefers unique IDs before generic names. This keeps Mad Dog-style KH-25 salvos from being reported 2–3× across overlapping recordings while preserving existing fallback behavior when Tacview omits IDs.
+
 ### Fixed - 2025-11-08
 - Fixed Vercel caching issue where API endpoints (`/api/*`) were serving stale debriefing data: changed `Cache-Control` header in `vercel.json` from `public, max-age=3600` (1 hour) to `no-cache, must-revalidate`. This ensures that when new debriefing files are added to `/debriefings/`, the aggregator picks them up on the next request instead of serving cached data from 1 hour ago. The old 1-hour cache was preventing fresh data from being served after file uploads.
 - Fixed pre-caching logic in `scripts/preprocess-debriefings.php`: Removed smart cache invalidation that was skipping rebuilds when source files were unchanged. The script now **always rebuilds and overwrites the cache** on every execution, ensuring fresh data is used even when debriefing files are replaced or aggregator logic changes. This addresses the issue where stale cached data persisted despite source file updates.
