@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - 2025-11-23
+- Mission Information now shows how many Tacview source recordings were merged into the aggregated mission. `proceedAggregatedStats()` accepts an explicit source-count argument, and every brownwater + SOTN entry point passes `count($mission->getSources())` (or cached equivalents) so the new row stays accurate across cached, runtime, and API render paths.
+
 ### Fixed - 2025-11-20
 - Hardened the EventGraph aggregation dedupe logic so identical missiles recorded in multiple Tacview tracks no longer inflate hit counts. `areEventsEquivalent()` now short-circuits when the same weapon instance (matching missile ID/parent and shooter) reappears, even if the recordings disagree on timestamps, and `weaponKey()` prefers unique IDs before generic names. This keeps Mad Dog-style KH-25 salvos from being reported 2–3× across overlapping recordings while preserving existing fallback behavior when Tacview omits IDs.
 

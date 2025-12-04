@@ -1,0 +1,36 @@
+{
+    "version": "1.0",
+    "generated": 1763532297,
+    "fileHashes": {
+        "Tacview-20251116-152509-DCS-C7M11sanitized final.xml": {
+            "hash": "f1095bc96cfb7c57e3711252d130551b",
+            "size": 767937,
+            "modified": 1763526635
+        },
+        "Tacview-20251116-153145-DCS-Client-C7M11sanitized final.xml": {
+            "hash": "f61153fbbaaee5c8d9003e7289e1615c",
+            "size": 853032,
+            "modified": 1763526646
+        },
+        "Tacview-20251116-162855-DCS-Client-C7M11sanitized final.xml": {
+            "hash": "613e9cd2c6830b3841cea05e98ea3fc9",
+            "size": 726202,
+            "modified": 1763526654
+        },
+        "Tacview-20251116-222941-DCS-Client-C7M11sanitized final.xml": {
+            "hash": "310da833194391bc24e57af4f24d46d6",
+            "size": 862158,
+            "modified": 1763526662
+        },
+        "Tacview-20251117-062926-DCS-Client-C7M11sanitized final.xml": {
+            "hash": "e0642b9b2c05e298c9ea4d572e861621",
+            "size": 49040,
+            "modified": 1763526590
+        },
+        "Tacview-20251117-070200-DCS-Client-C7M11sanitized final.xml": {
+            "hash": "055987af564eefe940e124b1c616cb8f",
+            "size": 608858,
+            "modified": 1763526607
+        }
+    }
+}
